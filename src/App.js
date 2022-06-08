@@ -1,8 +1,23 @@
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from "react-router-dom";
+import Navbar from "./Component/Navbar"
+import Home from "./Component/Home"
+
+
 function App() {
   return (
-    <div>
-      OLX-frontend
-    </div>
+    <Router>
+      <Navbar/>
+      <div>
+        <Routes>
+          <Route path="/" element={<Home/>}></Route>
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
