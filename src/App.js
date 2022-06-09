@@ -1,4 +1,6 @@
 import React from "react";
+
+import SubNavbar from '../src/Component/SubNavbar';
 import {
   BrowserRouter as Router,
   Routes,
@@ -12,7 +14,8 @@ function App() {
   return (
     <Router>
       <Navbar/>
-      <div>
+      <SubNavbar/>
+      <div >
         <Routes>
           <Route path="/" element={<Home/>}></Route>
         </Routes>
