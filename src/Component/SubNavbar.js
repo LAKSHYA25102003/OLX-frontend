@@ -2,7 +2,7 @@ import React from 'react'
 import "./Subnavbar.css"
 const SubNavbar = () => {
     return (
-        <div className='subnav' style={{ boxShadow: "2px 2px 2px #a0acb84a",overflowX:"auto",height:"55px" }}>
+        <div className='subnav' style={{ boxShadow: "2px 2px 2px #a0acb84a",overflowX:"auto", }}>
             <div className='container' >
                 <ul className='d-flex list align-items-center ps-0'>
                     <li className="subnavlink d-flex ps-0 ms-0 align-items-center">

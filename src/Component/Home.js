@@ -1,11 +1,12 @@
 import React from 'react'
+import ItemCollection from './ItemCollection';
 
-function home() {
+function Home() {
   return (
     <div className='container'>
-      <h1>this is home page</h1>
+      <ItemCollection/>
     </div>
   )
 }
 
-export default home
+export default Home

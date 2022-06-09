@@ -1,6 +1,7 @@
 import React from 'react'
 // to load image in react use img src={require('/images/image-name.png')}
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 
 function Navbar() {
@@ -18,9 +19,9 @@ function Navbar() {
         <>
             <nav className="navbar navbar-expand-lg bg-light py-3" style={{ boxShadow: "2px 2px 2px #a0acb84a" }}>
                 <div className="container-fluid container">
-                    <a className="navbar-brand" href="/">
+                    <Link className="navbar-brand" to="/">
                         <img src={require("../Images/OLXlogo.png")} width="48" height="27" className="d-inline-block align-top" alt="OLX-logo" />
-                    </a>
+                    </Link>
                     <button onClick={toggleHandler} className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
@@ -40,10 +41,17 @@ function Navbar() {
                                     <div className='d-flex'>
 
                                         {/*for  location bar */}
-                                        <div className='d-flex' style={{ border: "2px solid black", borderRadius: "3px", height: "50px", width: "300px" }} >
-                                            <i className="fa fa-search my-auto ms-2 me-1" aria-hidden="true" />
-                                            <input style={{ border: "none", outline: "none", width: "100%" }} className="me-2" type="search" placeholder="Search city,area or location.." aria-label="Search" />
-                                            <i className='fas fa-angle-down my-auto me-2' style={{ fontSize: "24px", cursor: "pointer" }}></i>
+                                        <div style={{cursor:"pointer"}} className="dropdown dropright">
+                                            <div className='d-flex' style={{ border: "2px solid black", borderRadius: "3px", height: "50px", width: "300px" }} id="dropdownMenuButton" data-bs-toggle="dropdown" >
+                                                <i className="fa fa-search my-auto ms-2 me-1" aria-hidden="true" />
+                                                <button style={{ border: "none", outline: "none", width: "100%", backgroundColor: "white" }} className="me-2" type="button" placeholder="Search city,area or location.." aria-label="Search" >Choose Hostel or location</button>
+                                                <i className='fas fa-angle-down my-auto me-2' style={{ fontSize: "24px", cursor: "pointer" }}></i>
+                                            </div>
+                                            <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                <Link className="dropdown-item" to="#">Disang</Link>
+                                                <Link className="dropdown-item" to="#">Umiam</Link>
+                                                <Link className="dropdown-item" to="#">Kapili</Link>
+                                            </div>
                                         </div>
 
                                         {/* for products search bar */}
@@ -62,10 +70,17 @@ function Navbar() {
                                     <div className='d-flex flex-column mt-2'>
 
                                         {/*for  location bar */}
-                                        <div className='d-flex' style={{ border: "2px solid black", borderRadius: "3px", height: "50px", width: "300px" }} >
-                                            <i className="fa fa-search my-auto ms-2 me-1" aria-hidden="true" />
-                                            <input style={{ border: "none", outline: "none", width: "100%" }} className="me-2" type="search" placeholder="Search city,area or location.." aria-label="Search" />
-                                            <i className='fas fa-angle-down my-auto me-2' style={{ fontSize: "24px", cursor: "pointer" }}></i>
+                                        <div style={{cursor:"pointer"}} className="dropdown dropright">
+                                            <div className='d-flex' style={{ border: "2px solid black", borderRadius: "3px", height: "50px", width: "300px" }} id="dropdownMenuButton" data-bs-toggle="dropdown" >
+                                                <i className="fa fa-search my-auto ms-2 me-1" aria-hidden="true" style={{cursor:"pointer"}}/>
+                                                <button style={{ border: "none", outline: "none", width: "100%", backgroundColor: "white" }} className="me-2" type="button" placeholder="Search city,area or location.." aria-label="Search" >Choose Hostel or location</button>
+                                                <i className='fas fa-angle-down my-auto me-2' style={{ fontSize: "24px", cursor: "pointer" }}></i>
+                                            </div>
+                                            <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                <Link className="dropdown-item" to="#">Disang</Link>
+                                                <Link className="dropdown-item" to="#">Umiam</Link>
+                                                <Link className="dropdown-item" to="#">Kapili</Link>
+                                            </div>
                                         </div>
 
                                         {/* for products search bar */}
