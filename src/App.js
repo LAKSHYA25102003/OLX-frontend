@@ -1,6 +1,5 @@
 import React from "react";
 import ItemState from "./Context/item/ItemState";
-import SubNavbar from '../src/Component/SubNavbar';
 import {
   BrowserRouter as Router,
   Routes,
@@ -15,10 +14,9 @@ function App() {
     <ItemState>
       <Router>
         <Navbar />
-        <SubNavbar />
         <div >
           <Routes>
-            <Route path="/" element={<Home />}></Route>
+            <Route path="/*" element={<Home />}></Route>
           </Routes>
         </div>
       </Router>

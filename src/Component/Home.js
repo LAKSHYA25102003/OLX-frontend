@@ -1,10 +1,14 @@
 import React from 'react'
 import ItemCollection from './ItemCollection';
+import SubNavbar from './SubNavbar';
 
 function Home() {
   return (
-    <div className='container'>
-      <ItemCollection/>
+    <div  style={{ marginTop: "80px" }}>
+      <SubNavbar />
+      <div className='container '>
+        <ItemCollection />
+      </div>
     </div>
   )
 }

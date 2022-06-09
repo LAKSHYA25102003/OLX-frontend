@@ -17,7 +17,7 @@ function Navbar() {
 
     return (
         <>
-            <nav className="navbar navbar-expand-lg bg-light py-3" style={{ boxShadow: "2px 2px 2px #a0acb84a" }}>
+            <nav className="fixed-top navbar navbar-expand-lg bg-light py-3" style={{ boxShadow: "2px 2px 2px #a0acb84a" }}>
                 <div className="container-fluid container">
                     <Link className="navbar-brand" to="/">
                         <img src={require("../Images/OLXlogo.png")} width="48" height="27" className="d-inline-block align-top" alt="OLX-logo" />
