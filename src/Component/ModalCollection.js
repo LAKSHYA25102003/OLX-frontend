@@ -3,15 +3,21 @@ import { useContext } from 'react';
 import AuthContext from '../Context/authentication/AuthContext';
 import Modal from 'react-modal';
 import "./ModalCollection.css"
+import {useNavigate} from "react-router-dom"
 
 
 export function LoginModal() {
 
+  const navigate=useNavigate();
   const context = useContext(AuthContext);
   const { modalState, setModalState } = context;
 
   const closeHandler = () => {
     setModalState(false);
+  }
+
+  const handleEmailLogin=()=>{
+    navigate("/login");
   }
 
   
@@ -44,10 +50,10 @@ export function LoginModal() {
         <h2>Login</h2>
         <form className='my-3'>
           <div className='login-modal'>
-            <div className='modal-button'>
+            {/* <div className='modal-button'>
               <i class="fa fa-mobile" aria-hidden="true"></i>
               <h6>Login with Phone</h6>
-            </div>
+            </div> */}
             <div className='modal-button'>
               <img src={require("../Images/google.png")} alt="" />
               <h6>Login with Google</h6>
@@ -55,11 +61,14 @@ export function LoginModal() {
             <div className='or' >
               <h5>OR</h5>
             </div>
-            <div className='modal-button'>
+            <div className='modal-button' onClick={handleEmailLogin}>
               <i class="fa fa-envelope" aria-hidden="true"></i>
               <h6>Login with Email</h6>
             </div>
-
+            <div className='sign-up-button
+            '>
+              If you are new user Choose Option Login with Google for SignUp.
+            </div>
           </div>
         </form>
       </Modal>

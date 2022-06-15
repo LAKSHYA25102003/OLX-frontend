@@ -10,73 +10,73 @@ const ItemState=(props)=>{
             desc:"Good Product"
         },
         {
-            id:1,
+            id:2,
             img:"https://apollo-singapore.akamaized.net/v1/files/pofzexa9t2h22-IN/image;s=300x600;q=60",
             price:"120,000",
             desc:"Good Product"
         },
         {
-            id:1,
+            id:3,
             img:"https://apollo-singapore.akamaized.net/v1/files/pofzexa9t2h22-IN/image;s=300x600;q=60",
             price:"120,000",
             desc:"Good Product"
         },
         {
-            id:1,
+            id:4,
             img:"https://apollo-singapore.akamaized.net/v1/files/pofzexa9t2h22-IN/image;s=300x600;q=60",
             price:"120,000",
             desc:"Good Product"
         },
         {
-            id:1,
+            id:5,
             img:"https://apollo-singapore.akamaized.net/v1/files/pofzexa9t2h22-IN/image;s=300x600;q=60",
             price:"120,000",
             desc:"Good Product"
         },
         {
-            id:1,
+            id:6,
             img:"https://apollo-singapore.akamaized.net/v1/files/pofzexa9t2h22-IN/image;s=300x600;q=60",
             price:"120,000",
             desc:"Good Product"
         },
         {
-            id:1,
+            id:7,
             img:"https://apollo-singapore.akamaized.net/v1/files/pofzexa9t2h22-IN/image;s=300x600;q=60",
             price:"120,000",
             desc:"Good Product"
         },
         {
-            id:1,
+            id:8,
             img:"https://apollo-singapore.akamaized.net/v1/files/pofzexa9t2h22-IN/image;s=300x600;q=60",
             price:"120,000",
             desc:"Good Product"
         },
         {
-            id:1,
+            id:9,
             img:"https://apollo-singapore.akamaized.net/v1/files/pofzexa9t2h22-IN/image;s=300x600;q=60",
             price:"120,000",
             desc:"Good Product"
         },
         {
-            id:1,
+            id:10,
             img:"https://apollo-singapore.akamaized.net/v1/files/pofzexa9t2h22-IN/image;s=300x600;q=60",
             price:"120,000",
             desc:"Good Product"
         },
         {
-            id:1,
+            id:11,
             img:"https://apollo-singapore.akamaized.net/v1/files/pofzexa9t2h22-IN/image;s=300x600;q=60",
             price:"120,000",
             desc:"Good Product"
         },
         {
-            id:1,
+            id:12,
             img:"https://apollo-singapore.akamaized.net/v1/files/pofzexa9t2h22-IN/image;s=300x600;q=60",
             price:"120,000",
             desc:"Good Product"
         },
         {
-            id:1,
+            id:13,
             img:"https://apollo-singapore.akamaized.net/v1/files/pofzexa9t2h22-IN/image;s=300x600;q=60",
             price:"120,000",
             desc:"Good Product"

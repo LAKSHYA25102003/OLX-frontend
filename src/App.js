@@ -8,6 +8,9 @@ import {
 import Navbar from "./Component/Navbar"
 import Home from "./Component/Home"
 import AuthState from "./Context/authentication/AuthState";
+import Login from "./Component/Login";
+import SubNavbar from "./Component/SubNavbar";
+
 
 
 function App() {
@@ -15,10 +18,12 @@ function App() {
     <AuthState>
       <ItemState>
         <Router>
-          <Navbar />
-          <div >
+          <Navbar  />
+          <div style={{ marginTop: "80px" }} >
+            <SubNavbar/>
             <Routes>
-              <Route path="/*" element={<Home />}></Route>
+              <Route path="/" element={<Home />}></Route>
+              <Route path="/login" element={<Login />}></Route>
             </Routes>
           </div>
         </Router>
