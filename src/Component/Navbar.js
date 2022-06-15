@@ -2,9 +2,19 @@ import React from 'react'
 // to load image in react use img src={require('/images/image-name.png')}
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import AuthContext from '../Context/authentication/AuthContext';
+import { useContext } from 'react';
 
 
 function Navbar() {
+
+    const context=useContext(AuthContext);
+    const {setModalState}=context;
+
+    const loginHandler=()=>{
+        setModalState(true);
+    }
+
     const [searchState, setSearchState] = useState(true);
     const toggleHandler = () => {
         if (searchState === true) {
@@ -121,7 +131,7 @@ function Navbar() {
                     </div>
 
                     <div className='d-flex justify-content-center align-items-center ms-3'>
-                        <button className='btn' style={{ textDecoration: "underline", outline: "none", border: "none" }}><h5>Login</h5></button>
+                        <button className='btn' style={{ textDecoration: "underline", outline: "none", border: "none" }} onClick={loginHandler}><h5>Login</h5></button>
                     </div>
 
                     <div className='d-flex justify-content-center align-items-center ms-3'>

@@ -4,56 +4,82 @@ import ItemContext from "./ItemContext";
 const ItemState=(props)=>{
     const Items=[
         {
-            name:"lakshya",
-            id:1
+            id:1,
+            img:"https://apollo-singapore.akamaized.net/v1/files/pofzexa9t2h22-IN/image;s=300x600;q=60",
+            price:"120,000",
+            desc:"Good Product"
         },
         {
-            name:"lakshya",
-            id:2
+            id:1,
+            img:"https://apollo-singapore.akamaized.net/v1/files/pofzexa9t2h22-IN/image;s=300x600;q=60",
+            price:"120,000",
+            desc:"Good Product"
         },
         {
-            name:"lakshya",
-            id:3
+            id:1,
+            img:"https://apollo-singapore.akamaized.net/v1/files/pofzexa9t2h22-IN/image;s=300x600;q=60",
+            price:"120,000",
+            desc:"Good Product"
         },
         {
-            name:"lakshya",
-            id:4
+            id:1,
+            img:"https://apollo-singapore.akamaized.net/v1/files/pofzexa9t2h22-IN/image;s=300x600;q=60",
+            price:"120,000",
+            desc:"Good Product"
         },
         {
-            name:"lakshya",
-            id:5
+            id:1,
+            img:"https://apollo-singapore.akamaized.net/v1/files/pofzexa9t2h22-IN/image;s=300x600;q=60",
+            price:"120,000",
+            desc:"Good Product"
         },
         {
-            name:"lakshya",
-            id:6
+            id:1,
+            img:"https://apollo-singapore.akamaized.net/v1/files/pofzexa9t2h22-IN/image;s=300x600;q=60",
+            price:"120,000",
+            desc:"Good Product"
         },
         {
-            name:"lakshya",
-            id:7
+            id:1,
+            img:"https://apollo-singapore.akamaized.net/v1/files/pofzexa9t2h22-IN/image;s=300x600;q=60",
+            price:"120,000",
+            desc:"Good Product"
         },
         {
-            name:"lakshya",
-            id:8
+            id:1,
+            img:"https://apollo-singapore.akamaized.net/v1/files/pofzexa9t2h22-IN/image;s=300x600;q=60",
+            price:"120,000",
+            desc:"Good Product"
         },
         {
-            name:"lakshya",
-            id:9
+            id:1,
+            img:"https://apollo-singapore.akamaized.net/v1/files/pofzexa9t2h22-IN/image;s=300x600;q=60",
+            price:"120,000",
+            desc:"Good Product"
         },
         {
-            name:"lakshya",
-            id:10
+            id:1,
+            img:"https://apollo-singapore.akamaized.net/v1/files/pofzexa9t2h22-IN/image;s=300x600;q=60",
+            price:"120,000",
+            desc:"Good Product"
         },
         {
-            name:"lakshya",
-            id:11
+            id:1,
+            img:"https://apollo-singapore.akamaized.net/v1/files/pofzexa9t2h22-IN/image;s=300x600;q=60",
+            price:"120,000",
+            desc:"Good Product"
         },
         {
-            name:"lakshya",
-            id:12
+            id:1,
+            img:"https://apollo-singapore.akamaized.net/v1/files/pofzexa9t2h22-IN/image;s=300x600;q=60",
+            price:"120,000",
+            desc:"Good Product"
         },
         {
-            name:"lakshya",
-            id:13
+            id:1,
+            img:"https://apollo-singapore.akamaized.net/v1/files/pofzexa9t2h22-IN/image;s=300x600;q=60",
+            price:"120,000",
+            desc:"Good Product"
         }
     ]
 

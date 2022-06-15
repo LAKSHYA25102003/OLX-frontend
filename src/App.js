@@ -7,20 +7,23 @@ import {
 } from "react-router-dom";
 import Navbar from "./Component/Navbar"
 import Home from "./Component/Home"
+import AuthState from "./Context/authentication/AuthState";
 
 
 function App() {
   return (
-    <ItemState>
-      <Router>
-        <Navbar />
-        <div >
-          <Routes>
-            <Route path="/*" element={<Home />}></Route>
-          </Routes>
-        </div>
-      </Router>
-    </ItemState>
+    <AuthState>
+      <ItemState>
+        <Router>
+          <Navbar />
+          <div >
+            <Routes>
+              <Route path="/*" element={<Home />}></Route>
+            </Routes>
+          </div>
+        </Router>
+      </ItemState>
+    </AuthState>
   );
 }
 
