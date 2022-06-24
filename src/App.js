@@ -11,7 +11,10 @@ import AuthState from "./Context/authentication/AuthState";
 import Login from "./Component/Login";
 import SubNavbar from "./Component/SubNavbar";
 import SignUp from "./Component/SignUp";
+import SetPassword from "./Component/SetPassword";
+import ResetPassword from "./Component/ResetPassword";
 
+import ResetSetPassword from "./Component/ResetSetPassword";
 
 
 function App() {
@@ -26,6 +29,9 @@ function App() {
               <Route path="/" element={<Home />}></Route>
               <Route path="/login" element={<Login />}></Route>
               <Route path="/sign-up" element={<SignUp/>}></Route>
+              <Route path="/set-password/:token" element={<SetPassword/>}></Route>
+              <Route path="/reset-password" element={<ResetPassword/>}></Route>
+              <Route path="/reset-set-password/:email/:token" element={<ResetSetPassword/>}></Route>
             </Routes>
           </div>
         </Router>

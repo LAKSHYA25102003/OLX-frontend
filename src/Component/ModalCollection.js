@@ -3,12 +3,12 @@ import { useContext } from 'react';
 import AuthContext from '../Context/authentication/AuthContext';
 import Modal from 'react-modal';
 import "./ModalCollection.css"
-import {useNavigate} from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 
 export function LoginModal() {
 
-  const navigate=useNavigate();
+  const navigate = useNavigate();
   const context = useContext(AuthContext);
   const { modalState, setModalState } = context;
 
@@ -16,11 +16,11 @@ export function LoginModal() {
     setModalState(false);
   }
 
-  const handleEmailLogin=()=>{
+  const handleEmailLogin = () => {
     navigate("/login");
   }
 
-  
+
 
   return (
     <div>
@@ -37,7 +37,7 @@ export function LoginModal() {
               width: "30%",
               margin: "auto",
               marginTop: "80px",
-              height: "60%"
+              height: "50%"
             },
             overlay: {
               backgroundColor: "rgba(0, 0, 0, 0.7)",
@@ -58,15 +58,14 @@ export function LoginModal() {
               <h5>OR</h5>
             </div>
             <div className='modal-button' onClick={handleEmailLogin}>
-              <i class="fa fa-envelope" aria-hidden="true"></i>
+              <i className="fa fa-envelope" aria-hidden="true"></i>
               <h6>Login with Email</h6>
-            </div>
-            <div className='sign-up-button
-            '>
-              If you are new user Choose Option Login with Google for SignUp.
             </div>
           </div>
         </form>
+        <div style={{ textAlign: "center",marginBottom:"10px" }} >
+            All your personal details are safe with us.
+        </div>
       </Modal>
     </div >
   )
