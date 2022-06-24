@@ -10,6 +10,7 @@ import Home from "./Component/Home"
 import AuthState from "./Context/authentication/AuthState";
 import Login from "./Component/Login";
 import SubNavbar from "./Component/SubNavbar";
+import SignUp from "./Component/SignUp";
 
 
 
@@ -24,6 +25,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />}></Route>
               <Route path="/login" element={<Login />}></Route>
+              <Route path="/sign-up" element={<SignUp/>}></Route>
             </Routes>
           </div>
         </Router>

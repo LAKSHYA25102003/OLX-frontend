@@ -50,10 +50,6 @@ export function LoginModal() {
         <h2>Login</h2>
         <form className='my-3'>
           <div className='login-modal'>
-            {/* <div className='modal-button'>
-              <i class="fa fa-mobile" aria-hidden="true"></i>
-              <h6>Login with Phone</h6>
-            </div> */}
             <div className='modal-button'>
               <img src={require("../Images/google.png")} alt="" />
               <h6>Login with Google</h6>
