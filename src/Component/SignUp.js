@@ -14,7 +14,15 @@ export default function SignUp() {
     const navigate=useNavigate();
   return (
     <div className='container' style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-            <div style={{ width: "30%", height: "60%",borderRadius:"8px" ,display: "flex", flexDirection: "column", marginTop: "50px", alignContent: "center", justifyContent: "center", margin: "70px",paddingBottom:"10px",boxShadow: "-15px -15px 4px -3px rgba(115,113,113,0.6)",backgroundColor:"rgb(101,107,255)" }}>
+            <div style={{ width: "30%", height: "60%",borderRadius:"8px" ,display: "flex", flexDirection: "column", marginTop: "50px", alignContent: "center", justifyContent: "center", margin: "70px",paddingBottom:"10px",boxShadow: "-15px -15px 4px -3px rgba(115,113,113,0.6)",backgroundColor:"rgb(101,107,255)",position:"relative" }}>
+                <i 
+                class="fa fa-times"
+                aria-hidden="true"
+                style={{position:"absolute",fontSize:"20px",cursor:"pointer",top:"10px",right:"10px"}} 
+                onClick={()=>{
+                    navigate("/");
+                }}>
+                </i>
                 <div style={{ display: "flex", alignItems: "center", justifyContent: "center", margin: "10px", padding: "9px" }}>
                     <img src={require("../Images/OLXlogo.png")} alt="OLX" style={{ width: "30%", height: "30%" }} />
                 </div>
