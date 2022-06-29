@@ -5,7 +5,7 @@ import { useState } from 'react';
 export default function SignUp() {
 
 
-    const [em, setEm] = useState({ name: "", email: "" })
+    const [em, setEm] = useState({ name: "", email: "" ,phone: ""})
 
     const emailChangeHandler = async (event) => {
         setEm({ ...em, [event.target.name]: event.target.value })
@@ -17,6 +17,7 @@ export default function SignUp() {
         const data = {
             name: em.name,
             email: em.email,
+            contact: em.phone 
         }
         const response = await fetch(url, {
             method: 'POST',
@@ -52,6 +53,7 @@ export default function SignUp() {
                     <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", width: "100%" }}>
                         <input name="email" required="true" type="email" id="email" placeholder="Email" style={{ margin: "8px", padding: "5px", width: "80%", borderRadius: "5px" }} value={em.email} onChange={emailChangeHandler} />
                         <input name="name" required="true" type="text" id="name" placeholder="Name" style={{ margin: "8px", padding: "5px", width: "80%", borderRadius: "5px" }} onChange={emailChangeHandler} value={em.name} />
+                        <input name="phone" required="true" type="text" id="phone" placeholder="Phone" style={{ margin: "8px", padding: "5px", width: "80%", borderRadius: "5px" }} onChange={emailChangeHandler} value={em.phone} />
                         <p style={{ marginX: "auto", color: "white", cursor: "pointer" }}
                             onClick={() => {
                                 navigate("/login")

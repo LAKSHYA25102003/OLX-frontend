@@ -26,9 +26,12 @@ function Login() {
                 'Content-Type': "application/json"
             },
             body: JSON.stringify(data)
-
         })
         console.log(response.status);
+        const json=await response.json()
+        if(response.status===200){
+            localStorage.setItem('token',json.token)
+        }
     }
 
 

@@ -13,6 +13,7 @@ import SubNavbar from "./Component/SubNavbar";
 import SignUp from "./Component/SignUp";
 import SetPassword from "./Component/SetPassword";
 import ResetPassword from "./Component/ResetPassword";
+import NewItem from "./Component/NewItem";
 
 import ResetSetPassword from "./Component/ResetSetPassword";
 
@@ -27,6 +28,7 @@ function App() {
             <SubNavbar/>
             <Routes>
               <Route path="/" element={<Home />}></Route>
+              <Route path="/newitem" element={<NewItem />}></Route>
               <Route path="/login" element={<Login />}></Route>
               <Route path="/sign-up" element={<SignUp/>}></Route>
               <Route path="/set-password/:token" element={<SetPassword/>}></Route>

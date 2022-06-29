@@ -138,7 +138,7 @@ function Navbar() {
                         <button className='btn btn-outline-primary ' style={{ borderRadius: '30px', boxShadow: "2px 2px 2px blue" }} >
                             <div style={{ fontSize: "20px" }} className='d-flex justify-content-center align-items-center'>
                                 <i className="fa fa-plus me-1" aria-hidden="true"></i>
-                                Sell
+                                <Link to='/newitem'>Sell Item</Link>
                             </div>
                         </button>
                     </div>
