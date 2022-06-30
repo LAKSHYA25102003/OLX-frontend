@@ -136,7 +136,8 @@ function Navbar() {
                     </div>
                     <DropdownButton id="dropdown-basic-button" title="Dropdown button">
                     <Link class="dropdown-item" to="/edit-profile">Profile</Link>
-                    <Link class="dropdown-item" to="/edit-profile">Activity</Link>
+                    <Link class="dropdown-item" to="/allitemsposted">All Items Posted</Link>
+                    <Link class="dropdown-item" to="/likeditem">Activity</Link>
                     <Link class="dropdown-item" to="/edit-profile">Logout</Link>
                     </DropdownButton>
                     <div className='d-flex justify-content-center align-items-center ms-3'>

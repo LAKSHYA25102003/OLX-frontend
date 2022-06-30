@@ -23,7 +23,7 @@ function Itembycategory() {
           {
             itembycategory.map((item)=>{
               return (
-              <Item item={item} key={item.id}/>
+              <Item item={item} del={false} key={item.id}/>
               );
             })
           }

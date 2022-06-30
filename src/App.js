@@ -19,6 +19,8 @@ import ResetSetPassword from "./Component/ResetSetPassword";
 import Description from "./Component/Description";
 import Itembycategory from "./Component/Itembycategory";
 import Profile from "./Component/editprofile/Profile";
+import Useritem from "./Component/useritems/Useritem";
+import LikedItem from "./Component/activity/LikedItem";
 
 
 function App() {
@@ -38,6 +40,8 @@ function App() {
               <Route path="/set-password/:token" element={<SetPassword/>}></Route>
               <Route path="/edit-profile" element={<Profile/>}></Route>
               <Route path="/item/:category" element={<Itembycategory/>}></Route>
+              <Route path="/allitemsposted" element={<Useritem/>}></Route>
+              <Route path="/likeditem" element={<LikedItem/>}></Route>
               <Route path="/reset-password" element={<ResetPassword/>}></Route>
               <Route path="/reset-set-password/:email/:token" element={<ResetSetPassword/>}></Route>
             </Routes>
