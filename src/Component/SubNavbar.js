@@ -23,25 +23,22 @@ const SubNavbar = () => {
 
 
                     <li className="subnavlink">
-                        <a className='navlink' href="#">Cars</a>
+                        <Link className='navlink' to='/item/Automobiles'>Automobiles</Link>
                     </li>
                     <li className="subnavlink">
-                        <a className='navlink' href="#">Motorcycles</a>
+                        <Link className='navlink' to='/item/Houses'>Houses</Link>
                     </li>
                     <li className="subnavlink">
-                        <a className="navlink" href="#">Mobile Phones</a>
+                        <Link className='navlink' to='/item/Books'>Books</Link>
                     </li>
                     <li className="subnavlink">
-                        <a className="navlink" href="#">For Sale:Houses and Apartments</a>
+                        <Link className='navlink' to='/item/Electronics'>Electronics</Link>
                     </li>
                     <li className="subnavlink">
-                        <a className="navlink" href="#">Scooters</a>
+                        <Link className='navlink' to='/item/Sports'>Sports</Link>
                     </li>
                     <li className="subnavlink">
-                        <a className="navlink" href="#">Commercial & other Vehicles</a>
-                    </li>
-                    <li className="subnavlink">
-                        <a className="navlink" href="#">For Rent:Houses and Apartments</a>
+                        <Link className='navlink' to='/item/Musics'>Musics</Link>
                     </li>
                 </ul>
             </div>

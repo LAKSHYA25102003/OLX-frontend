@@ -1,6 +1,7 @@
 import React from 'react'
 // to load image in react use img src={require('/images/image-name.png')}
 import { useState } from 'react';
+import { Dropdown,DropdownButton } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import AuthContext from '../Context/authentication/AuthContext';
 import { useContext } from 'react';
@@ -133,12 +134,16 @@ function Navbar() {
                     <div className='d-flex justify-content-center align-items-center ms-3'>
                         <button className='btn' style={{ textDecoration: "underline", outline: "none", border: "none" }} onClick={loginHandler}><h5>Login</h5></button>
                     </div>
-
+                    <DropdownButton id="dropdown-basic-button" title="Dropdown button">
+                    <Link class="dropdown-item" to="/edit-profile">Profile</Link>
+                    <Link class="dropdown-item" to="/edit-profile">Activity</Link>
+                    <Link class="dropdown-item" to="/edit-profile">Logout</Link>
+                    </DropdownButton>
                     <div className='d-flex justify-content-center align-items-center ms-3'>
                         <button className='btn btn-outline-primary ' style={{ borderRadius: '30px', boxShadow: "2px 2px 2px blue" }} >
                             <div style={{ fontSize: "20px" }} className='d-flex justify-content-center align-items-center'>
                                 <i className="fa fa-plus me-1" aria-hidden="true"></i>
-                                <Link to='/newitem'>Sell Item</Link>
+                                <Link to='/newitem'>Sell</Link>
                             </div>
                         </button>
                     </div>

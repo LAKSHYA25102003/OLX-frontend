@@ -7,9 +7,9 @@ function Item(props) {
     const [imageUrl,setImageUrl]=useState('http://localhost:5000/'+item.img_address)
     // console.log(imageUrl)
     return (
-        <Card style={{ width: '18rem' }}>
+        <Card className="mx-2 my-2" style={{ padding:"5px",width: '18rem',border:"1px black solid"}}>
         <Card.Img style={{width:"100%",maxHeight:"200px"}} variant="top" src={imageUrl} />
-        <Card.Body>
+        <Card.Body style={{marginbottom:"0px"}}>
           <Card.Title>Rs {item.price}</Card.Title>
           <Card.Text>
             {item.description}
