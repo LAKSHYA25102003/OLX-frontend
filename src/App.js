@@ -16,6 +16,7 @@ import ResetPassword from "./Component/ResetPassword";
 import NewItem from "./Component/NewItem";
 
 import ResetSetPassword from "./Component/ResetSetPassword";
+import Description from "./Component/Description";
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
               <Route path="/" element={<Home />}></Route>
               <Route path="/newitem" element={<NewItem />}></Route>
               <Route path="/login" element={<Login />}></Route>
+              <Route path="/description/:id" element={<Description />}></Route>
               <Route path="/sign-up" element={<SignUp/>}></Route>
               <Route path="/set-password/:token" element={<SetPassword/>}></Route>
               <Route path="/reset-password" element={<ResetPassword/>}></Route>

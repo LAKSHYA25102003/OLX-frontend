@@ -1,0 +1,44 @@
+/* .col-8{
+    background-color: red;
+}
+.col-4{
+    background-color: green;
+} */
+.anchor:link{
+    color: grey;
+}
+.anchor:hover{
+    text-decoration: none;
+    color: red;
+}
+
+.my-container{
+    background-color: rgb(235, 235, 235);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+}
+.button-1{
+    color:white;
+    background-color: black;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.button-1:hover{
+    color: black;
+    background-color: white;
+}
+
+img{
+    height:300px;
+}
+
+.container-3{
+    background-color: black;
+    padding:5%;
+    height: 500px;
+    width: 50%;
+    margin: auto;
+}
