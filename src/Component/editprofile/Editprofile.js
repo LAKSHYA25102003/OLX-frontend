@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Form,Button,Container } from 'react-bootstrap'
 import { Link } from "react-router-dom";
 export default function Editprofile(props) {
-    const [data,setData]=useState({email:props.user.email,name:props.user.name,contact:props.user.contact})
+    const [data,setData]=useState({email:props.user[0].email,name:props.user[0].name,contact:props.user[0].contact})
     
     const onChangeHandler=(e)=>{
         e.preventDefault()

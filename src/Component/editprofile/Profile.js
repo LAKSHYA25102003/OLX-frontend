@@ -1,17 +1,35 @@
-import React,{useEffect,useContext} from 'react'
+import React,{useEffect,useContext,useState} from 'react'
 import Editprofile from './Editprofile'
+import AuthContext from '../../Context/authentication/AuthContext'
 
-export default function Profile() {1
+export default function Profile() {
     const context=useContext(AuthContext)
-    const {user,fetchuser}=context
-    const getuser=async()=>{
-        await fetchuser()
+    const [user,setUser] = useState([]);
+
+
+    const fetchuser=async ()=>{
+      const url=`http://localhost:5000/api/auth/getuser`
+      const response = await fetch(url, {
+          method: 'GET',
+          headers: {
+              'Content-Type': "application/json",
+              'auth-token':localStorage.getItem('token')
+          }
+      })
+      const json= await response.json()
+      setUser(json)
     }
+
+    
     useEffect(()=>{
-        getuser()
-        console.log(user)
-    },[])
-  return (
-    <Editprofile user={user}></Editprofile>
-  )
+        fetchuser()
+    },[user.length])
+  if(user.length!==0){
+    return (
+      <Editprofile user={user}></Editprofile>
+    )
+  }
+  else{
+    <></>
+  }
 }

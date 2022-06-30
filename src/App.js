@@ -18,7 +18,7 @@ import NewItem from "./Component/NewItem";
 import ResetSetPassword from "./Component/ResetSetPassword";
 import Description from "./Component/Description";
 import Itembycategory from "./Component/Itembycategory";
-import Editprofile from "./Component/editprofile/Editprofile";
+import Profile from "./Component/editprofile/Profile";
 
 
 function App() {
@@ -36,7 +36,7 @@ function App() {
               <Route path="/description/:id" element={<Description />}></Route>
               <Route path="/sign-up" element={<SignUp/>}></Route>
               <Route path="/set-password/:token" element={<SetPassword/>}></Route>
-              <Route path="/edit-profile" element={<Editprofile/>}></Route>
+              <Route path="/edit-profile" element={<Profile/>}></Route>
               <Route path="/item/:category" element={<Itembycategory/>}></Route>
               <Route path="/reset-password" element={<ResetPassword/>}></Route>
               <Route path="/reset-set-password/:email/:token" element={<ResetSetPassword/>}></Route>
