@@ -1,17 +1,22 @@
 import { useNavigate } from "react-router-dom"
-import { useState } from "react";
+import { useState,useContext} from "react";
+import AuthContext from '../Context/authentication/AuthContext';
 
-function Login() {
+function Login(props) {
 
     const [loginCred,setLoginCred]=useState({
         email:"",
         password:""
     })
 
+    const authContext = useContext(AuthContext);
+    const{setLoginAlert} = authContext;
+
     const onChangeHandler=(event)=>{
         setLoginCred({...loginCred,[event.target.name]:event.target.value});
     }
 
+    const Navigate = useNavigate();
 
     const loginSubmitHandler = async (event) => {
         event.preventDefault();
@@ -27,10 +32,31 @@ function Login() {
             },
             body: JSON.stringify(data)
         })
+        
         console.log(response.status);
         const json=await response.json()
         if(response.status===200){
+            setLoginCred({
+                email:"",
+                password:""
+            });
             localStorage.setItem('token',json.token)
+            setLoginAlert(true);
+            Navigate("/");
+        }
+        else if(response.status===402){
+            props.showAlert("danger","Invalid Email",4000);
+            setLoginCred({
+                email:loginCred.email,
+                password:""
+            });
+        }
+        else if(response.status===403){
+            props.showAlert("danger","Invalid Password",4000);
+            setLoginCred({
+                email:loginCred.email,
+                password:""
+            });
         }
     }
 

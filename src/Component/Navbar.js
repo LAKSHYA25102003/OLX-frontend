@@ -1,18 +1,25 @@
 import React from 'react'
 // to load image in react use img src={require('/images/image-name.png')}
-import { useState } from 'react';
-import { Dropdown,DropdownButton } from 'react-bootstrap';
+import { useState, useRef } from 'react';
+import { Dropdown, DropdownButton } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import AuthContext from '../Context/authentication/AuthContext';
 import { useContext } from 'react';
+import { useNavigate } from "react-router-dom"
 
 
 function Navbar() {
+    const dropDownRef = useRef();
+    const Navigate = useNavigate();
+    const context = useContext(AuthContext);
+    const { setModalState } = context;
 
-    const context=useContext(AuthContext);
-    const {setModalState}=context;
+    const handleLogout = () => {
+        localStorage.removeItem('token');
+        Navigate("/login");
+    }
 
-    const loginHandler=()=>{
+    const loginHandler = () => {
         setModalState(true);
     }
 
@@ -52,7 +59,7 @@ function Navbar() {
                                     <div className='d-flex'>
 
                                         {/*for  location bar */}
-                                        <div style={{cursor:"pointer"}} className="dropdown dropright">
+                                        <div style={{ cursor: "pointer" }} className="dropdown dropright">
                                             <div className='d-flex' style={{ border: "2px solid black", borderRadius: "3px", height: "50px", width: "300px" }} id="dropdownMenuButton" data-bs-toggle="dropdown" >
                                                 <i className="fa fa-search my-auto ms-2 me-1" aria-hidden="true" />
                                                 <button style={{ border: "none", outline: "none", width: "100%", backgroundColor: "white" }} className="me-2" type="button" placeholder="Search city,area or location.." aria-label="Search" >Choose Hostel or location</button>
@@ -81,9 +88,9 @@ function Navbar() {
                                     <div className='d-flex flex-column mt-2'>
 
                                         {/*for  location bar */}
-                                        <div style={{cursor:"pointer"}} className="dropdown dropright">
+                                        <div style={{ cursor: "pointer" }} className="dropdown dropright">
                                             <div className='d-flex' style={{ border: "2px solid black", borderRadius: "3px", height: "50px", width: "300px" }} id="dropdownMenuButton" data-bs-toggle="dropdown" >
-                                                <i className="fa fa-search my-auto ms-2 me-1" aria-hidden="true" style={{cursor:"pointer"}}/>
+                                                <i className="fa fa-search my-auto ms-2 me-1" aria-hidden="true" style={{ cursor: "pointer" }} />
                                                 <button style={{ border: "none", outline: "none", width: "100%", backgroundColor: "white" }} className="me-2" type="button" placeholder="Search city,area or location.." aria-label="Search" >Choose Hostel or location</button>
                                                 <i className='fas fa-angle-down my-auto me-2' style={{ fontSize: "24px", cursor: "pointer" }}></i>
                                             </div>
@@ -127,19 +134,19 @@ function Navbar() {
                         </ul>
 
                     </div>
-                    <div className='d-flex justify-content-center align-items-center ms-3'>
+                    <div className='d-flex justify-content-center align-items-center ms-3 mx-2'>
                         <h5>English</h5>
                     </div>
 
-                    <div className='d-flex justify-content-center align-items-center ms-3'>
-                        <button className='btn' style={{ textDecoration: "underline", outline: "none", border: "none" }} onClick={loginHandler}><h5>Login</h5></button>
-                    </div>
-                    <DropdownButton id="dropdown-basic-button" title="Dropdown button">
-                    <Link class="dropdown-item" to="/edit-profile">Profile</Link>
-                    <Link class="dropdown-item" to="/allitemsposted">All Items Posted</Link>
-                    <Link class="dropdown-item" to="/likeditem">Activity</Link>
-                    <Link class="dropdown-item" to="/edit-profile">Logout</Link>
-                    </DropdownButton>
+                    {localStorage.getItem('token') === null && <div className='d-flex justify-content-center align-items-center ms-3'>
+                        <button className='btn mx-4' style={{ textDecoration: "underline", outline: "none", border: "none" }} onClick={loginHandler}><h5>Login</h5></button>
+                    </div>}
+                    {localStorage.getItem('token') !== null && <><DropdownButton id="dropdown-basic-button" title="Profile" ref={dropDownRef}>
+                        <Link class="dropdown-item" to="/edit-profile" >Profile</Link>
+                        <Link class="dropdown-item" to="/allitemsposted" >All Items Posted</Link>
+                        <Link class="dropdown-item" to="/likeditem" >Activity</Link>
+                    </DropdownButton></>
+                    }
                     <div className='d-flex justify-content-center align-items-center ms-3'>
                         <button className='btn btn-outline-primary ' style={{ borderRadius: '30px', boxShadow: "2px 2px 2px blue" }} >
                             <div style={{ fontSize: "20px" }} className='d-flex justify-content-center align-items-center'>
@@ -148,6 +155,9 @@ function Navbar() {
                             </div>
                         </button>
                     </div>
+                    {localStorage.getItem('token') !==null && <div className='d-flex justify-content-center align-items-center ms-3'>
+                    <button className='btn' style={{ textDecoration: "underline", outline: "none", border: "none" }} onClick={handleLogout}><h5>LogOut</h5></button>
+                </div>}
                 </div>
             </nav>
         </>

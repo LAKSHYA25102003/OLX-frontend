@@ -21,7 +21,7 @@ export default function LikedItem() {
                 {
                   userLikedItems.map((item)=>{
                     return (
-                    <Item item={item} del={false} key={item.id}/>
+                    <Item item={item} del={false} key={item.id} />
                     );
                   })
                 }

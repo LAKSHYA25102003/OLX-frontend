@@ -3,7 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { useState } from 'react';
 
 
-function SetPassword() {
+function SetPassword(props) {
 
     const params = useParams();
     const token = params.token;
@@ -41,15 +41,29 @@ function SetPassword() {
             body: JSON.stringify(data)
 
         })
-        
-        const status=response.status;
+
+        const status = response.status;
         console.log("success");
         console.log(response.status);
+        if (response.status === 200) {
+            props.showAlert("success", "Password Set Successfully", 3000);
+            setTimeout(() => {
+                navigate("/login")
+            }, 3000);
+            setPassCred({
+                password: "",
+                Cpassword: ""
+            })
+        }
 
+        else if (response.status === 400) {
+            props.showAlert("danger", "Link Already Used.", 3000);
+            setPassCred({
+                password: "",
+                Cpassword: ""
+            })
+        }
         // for 400 link already used
-        setTimeout(() => {
-            navigate("/login")
-        }, 3000);
     }
 
 

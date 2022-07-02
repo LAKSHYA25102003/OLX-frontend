@@ -4,45 +4,54 @@ import {useParams} from 'react-router-dom'
 import { Card,Button,Container} from 'react-bootstrap'
 import ItemContext from '../Context/item/ItemContext'
 import './description.css'
-export default function Description() {
-    const {itembyID,fetchItembyID}=useContext(ItemContext)
-    const [item,setItem]=useState({})
-    const [ownerDetails,setOwnerDetails]=useState({})
-    const params=useParams()
-    const id=params.id
-    const fetch=async()=>{
-        await fetchItembyID(id)
-        setItem(itembyID)
-    }
-    useEffect(()=>{
-        fetch()
-        setOwnerDetails(item.ownerDetails)
-    },[])
-    console.log(item.ownerDetails)
+export default function Description(props) {
+    const {itembyID} = props;
+    // console.log(item.ownerDetails)
   return (
     <>
     <Container>
-    <Card style={{alignItems:"center"}}>
-  <Card.Img variant="top" style={{width:"400px"}} src={`http://localhost:5000/${itembyID.img_address}`} />
+    <Card style={{alignItems:"center"}} className="my-3">
+  <Card.Img variant="top" style={{width:"auto",height:"800px","border-radius": "25px"}} src={`http://localhost:5000/${itembyID[0].img_address}`} />
 
     </Card>
+    <div className='row my-4'>
     <Card >
-  <Card.Header as="h5">{itembyID.category}</Card.Header>
-  <Card.Body style={{marginRight:""}}>
-    <Card.Title>{itembyID.brand}</Card.Title>
-    <Card.Text>
-      {itembyID.description}
-    </Card.Text>
-    <Card.Text>
-      Posted on:- {itembyID.creation_date}
-    </Card.Text>
-    <Card.Text>
-      Rs {itembyID.price}
-    </Card.Text>    
-    <Button variant="primary">Seller Details</Button>
-  </Card.Body>
-</Card>
-</Container>
+      <Card.Header as="h3">{itembyID[0].category}</Card.Header>
+      
+      <Card.Body>
+        <Card.Title><h3>{itembyID[0].brand}</h3></Card.Title>
+        <Card.Text>
+          {itembyID[0].description}
+        </Card.Text>
+        <Card.Text>
+          Original Buying Date:- {itembyID[0].originalBuyingDate}
+        </Card.Text>  
+        <Card.Text>
+          Posted on:- {itembyID[0].creation_date}
+        </Card.Text>  
+        <Button variant="primary">Rs {itembyID[0].price}</Button>
+      </Card.Body>      
+    </Card>
+    <Card >
+      <Card.Header as="h5">Seller Details</Card.Header>
+      
+      <Card.Body>
+        <Card.Title><h2>{itembyID[0].ownerDetails.owner}</h2></Card.Title>
+        <Card.Text>
+          Email: {itembyID[0].ownerDetails.ownerEmail}
+        </Card.Text>
+        <Card.Text>
+          Contact :- {itembyID[0].ownerDetails.contact}
+        </Card.Text>   
+        <Card.Text>
+          Hostel :- {itembyID[0].ownerDetails.hostel}
+        </Card.Text>   
+
+        
+      </Card.Body>      
+    </Card>
+    </div>
+    </Container>
     </>
   )
 }

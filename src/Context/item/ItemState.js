@@ -4,7 +4,7 @@ import { useState } from "react";
 const ItemState=(props)=>{
     const [items,setItems]=useState([])
     const [userItems,setUserItems]=useState([])
-    const [itembyID,setItembyID]=useState({})
+    const [itembyID,setItembyID]=useState([])
     const [itembycategory,setItembyCategory]=useState([])
     const [userLikedItems,setUserLikedItems]=useState([])
     const fetchlikedItem=async()=>{
@@ -65,6 +65,7 @@ const ItemState=(props)=>{
         })
         console.log(response.status);
         const json=await response.json()
+        console.log(json)
         setItembyID(json)
     }
     const fetchByCategory=async(cat)=>{

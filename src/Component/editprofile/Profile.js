@@ -2,7 +2,7 @@ import React,{useEffect,useContext,useState} from 'react'
 import Editprofile from './Editprofile'
 import AuthContext from '../../Context/authentication/AuthContext'
 
-export default function Profile() {
+export default function Profile(props) {
     const context=useContext(AuthContext)
     const [user,setUser] = useState([]);
 
@@ -13,7 +13,7 @@ export default function Profile() {
           method: 'GET',
           headers: {
               'Content-Type': "application/json",
-              'auth-token':localStorage.getItem('token')
+              'auth-token':localStorage.getItem('token') // yokrn
           }
       })
       const json= await response.json()
@@ -26,7 +26,7 @@ export default function Profile() {
     },[user.length])
   if(user.length!==0){
     return (
-      <Editprofile user={user}></Editprofile>
+      <Editprofile user={user} showAlert={props.showAlert}></Editprofile>
     )
   }
   else{
