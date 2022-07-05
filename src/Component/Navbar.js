@@ -1,7 +1,7 @@
 import React from 'react'
 // to load image in react use img src={require('/images/image-name.png')}
 import { useState } from 'react';
-import { Dropdown,DropdownButton } from 'react-bootstrap';
+import { DropdownButton } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import AuthContext from '../Context/authentication/AuthContext';
 import { useContext } from 'react';
@@ -28,7 +28,7 @@ function Navbar() {
 
     return (
         <>
-            <nav className="fixed-top navbar navbar-expand-lg bg-light py-3" style={{ boxShadow: "2px 2px 2px #a0acb84a" }}>
+            <nav className="fixed-top navbar navbar-expand-lg bg-light py-3" style={{ boxShadow: "2px 2px 2px #a0acb84a"}}>
                 <div className="container-fluid container">
                     <Link className="navbar-brand" to="/">
                         <img src={require("../Images/OLXlogo.png")} width="48" height="27" className="d-inline-block align-top" alt="OLX-logo" />

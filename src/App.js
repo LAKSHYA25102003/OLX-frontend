@@ -21,6 +21,7 @@ import Itembycategory from "./Component/Itembycategory";
 import Profile from "./Component/editprofile/Profile";
 import Useritem from "./Component/useritems/Useritem";
 import LikedItem from "./Component/activity/LikedItem";
+import Footer from "./Component/Footer";
 
 
 function App() {
@@ -46,6 +47,7 @@ function App() {
               <Route path="/reset-set-password/:email/:token" element={<ResetSetPassword/>}></Route>
             </Routes>
           </div>
+          <Footer/>
         </Router>
       </ItemState>
     </AuthState>

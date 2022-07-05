@@ -1,10 +1,10 @@
 import React, { useContext, useState } from "react";
 import { Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import Chip from '@mui/material/Chip';
-import Stack from '@mui/material/Stack';
-import DoneIcon from '@mui/icons-material/Done';
-import DeleteIcon from '@mui/icons-material/Delete';
+// import Chip from '@mui/material/Chip';
+// import Stack from '@mui/material/Stack';
+// import DoneIcon from '@mui/icons-material/Done';
+// import DeleteIcon from '@mui/icons-material/Delete';
 import ItemContext from "../Context/item/ItemContext";
 function Item(props) {
   const { item,del } = props;
