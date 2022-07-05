@@ -23,7 +23,7 @@ export default function Useritem() {
                 {
                   userItems.map((item)=>{
                     return (
-                    <Item item={item} del={true} key={item.id}/>
+                    <Item item={item} del={true} key={item.id} isuser={true}/>
                     );
                   })
                 }

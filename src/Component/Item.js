@@ -1,6 +1,6 @@
 import React, { useContext, useState,useEffect } from "react";
 import { Card, Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 // import Chip from '@mui/material/Chip';
 // import Stack from '@mui/material/Stack';
 // import DoneIcon from '@mui/icons-material/Done';
@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import ItemContext from "../Context/item/ItemContext";
 import './item.css'
 function Item(props) {
+  const navigate = useNavigate();
   const { item,del } = props;
   const {deleteItem,likeItem}=useContext(ItemContext)
   const [isLiked,setLiked] = useState(false);
@@ -51,23 +52,39 @@ function Item(props) {
     deleteItem(item._id)
   }
   return (
-    <div class="card my-2">
-      <img src={imageUrl} alt="Denim Jeans" style={{width:"100%",paddingTop:"5px"}} />
+    <div class="card my-4" style={{borderRadius: "25px",borderColor: "black",borderWidth: "2px"}}>
+      <img src={imageUrl} alt="Denim Jeans" style={{width:"100%",paddingTop:"5px",borderRadius: "25px"}} />
       
       <h2 class="price my-2">Rs. {item.price}</h2>
       <p>{item.description.slice(0,100)}...</p>
-      <p><button ><Link to={`/description/${item._id}`} style={{color: "white"}}>Description</Link></button></p>
-      {!del &&  <button className="my-2" onClick={onClickLikeHandler} variant="primary">
-           {isLiked==true?"Dislike":"Like"}
-         </button>}
-         {del &&  <button className="my-2" onClick={onClickHandler} variant="primary">
-           Delete
-        </button>}
+      <div class="row gx-3 mb-3">
+      <div class="col-md-6 my-2"><button style={{borderRadius: "25px",width:"75%"}}><Link to={`/description/${item._id}`} style={{color: "white"}}>Description</Link></button></div>
+          <div class="col-md-6">
+            {!del ? <button className="my-2" style={{borderRadius: "25px",width:"75%"}} onClick={onClickLikeHandler} variant="primary">
+            {isLiked==true?"Dislike":"Like"}
+          </button>:<button className="my-2" style={{borderRadius: "25px",width:"75%"}} onClick={onClickHandler} variant="primary">
+            Delete
+          </button>}      
+          </div>
+      </div>
+      <div class="row gx-3 mb-3">
+          <div class="col-md-6">
+            {props.isuser ? <button className="my-2" style={{borderRadius: "25px",width:"75%"}}  variant="primary">
+            <Link to={`/update-item/${item._id}`} style={{color:"white"}}>Update</Link>
+          </button>:<></>}
+          </div>
+
+          
+            {props.isuser ? <div class="col-md-6 my-2"><button style={{borderRadius: "25px",width:"75%"}}><Link to={`/likedby/${item._id}`} style={{color: "white"}}>Liked By</Link></button></div>:<></>}
+          
+      </div>
     </div>
   );
 }
 
 export default Item;
+
+
 
 
 // <Card

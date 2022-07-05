@@ -23,6 +23,9 @@ import Useritem from "./Component/useritems/Useritem";
 import LikedItem from "./Component/activity/LikedItem";
 import Alert from "./Component/Alert";
 import DescFetch from "./Component/DescFetch";
+import UpdateItem from "./Component/UpdateItem";
+import Likedby from "./Component/Likedby";
+import UserProf from "./Component/UserProf";
 
 function App() {
 
@@ -56,6 +59,9 @@ function App() {
               <Route path="/likeditem" element={<LikedItem showAlert={showAlert}/>}></Route>
               <Route path="/reset-password" element={<ResetPassword showAlert={showAlert}/>}></Route>
               <Route path="/reset-set-password/:email/:token" element={<ResetSetPassword showAlert={showAlert}/>}></Route>
+              <Route path="/update-item/:id" element={<UpdateItem showAlert={showAlert}/>}></Route>
+              <Route path="/likedby/:id" element={<Likedby showAlert={showAlert}/>}></Route>
+              <Route path="/userprof/:id" element={<UserProf showAlert={showAlert}/>}></Route>
             </Routes>
           </div>
         </Router>

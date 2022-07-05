@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Form, Button, Container } from 'react-bootstrap'
-import { Link, useNavigate} from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 // import { Card, Form, Button } from "react-bootstrap";
 export default function Editprofile(props) {
   const [data, setData] = useState({ email: props.user[0].email, name: props.user[0].name, contact: props.user[0].contact, hostel: props.user[0].hostel })
-  const [pass, setPass] = useState({ curr_pass: "", new_pass: "", conf_new_pass:"" });
+  const [pass, setPass] = useState({ curr_pass: "", new_pass: "", conf_new_pass: "" });
   const [passwordChange, setPasswordChange] = useState(false);
   const navigate = useNavigate();
 
@@ -33,7 +33,7 @@ export default function Editprofile(props) {
   }
 
 
-  const handlePassChanges = async (curr,newp,confp) => {
+  const handlePassChanges = async (curr, newp, confp) => {
 
     const url = `http://localhost:5000/api/item/change_password`
     const response = await fetch(url, {
@@ -43,20 +43,20 @@ export default function Editprofile(props) {
         'Accept': 'application/json',
         'auth-token': localStorage.getItem('token')
       },
-      body: JSON.stringify({ password:curr, new_password:newp, confirm_password:confp })
+      body: JSON.stringify({ password: curr, new_password: newp, confirm_password: confp })
     })
     console.log(response.status);
     const json = await response.json()
     if (response.status === 200) {
-      setPass({ curr_pass: "", new_pass: "", conf_new_pass:"" })
+      setPass({ curr_pass: "", new_pass: "", conf_new_pass: "" })
       props.showAlert("success", "Changes Saved successfully", 3000);
     }
     else if (response.status === 403) {
-      setPass({ curr_pass: "", new_pass: "", conf_new_pass:"" })
+      setPass({ curr_pass: "", new_pass: "", conf_new_pass: "" })
       props.showAlert("danger", "Password Entered Is Incorrect.", 5000);
     }
-    else if(response.status === 401){
-      
+    else if (response.status === 401) {
+
       props.showAlert("danger", "Password Not Matched with Confirm Password.", 5000);
     }
   }
@@ -132,9 +132,16 @@ export default function Editprofile(props) {
                       </div>
 
                     </div>
-                    <button class="btn btn-primary my-1" type="button" disabled={data.contact.length == 10 ? false : true} onClick={() => handleSaveChanges(data.name, data.hostel, data.contact)}>Save Changes</button>
-                    <button class="btn btn-primary my-3" type="button" onClick={() => setPasswordChange(true)}>Change Password</button>
-                    <button class="btn btn-primary" type="button" >Cancel</button>
+                    <div class="row gx-3 mb-3">
+                      <div class="col-md-6">
+                        <button class="btn btn-primary" type="button" style={{ borderRadius: "25px" }} disabled={data.contact.length == 10 ? false : true} onClick={() => handleSaveChanges(data.name, data.hostel, data.contact)}>Save Changes</button>
+                      </div>
+                      <div class="col-md-6">
+                        <button class="btn btn-primary" type="button" style={{ borderRadius: "25px" }}> <Link to="/allitemsposted" style={{color: "white"}}>Cancel</Link></button>
+                      </div>
+                    </div>
+                    
+                      <button class="btn btn-primary my-3" type="button" style={{ borderRadius: "25px",width:"75%",margin:"auto"}} onClick={() => setPasswordChange(true)}>Change Password</button>
                   </form>
                 </div>
               </div>
@@ -142,8 +149,9 @@ export default function Editprofile(props) {
           </div>
         </div>
       </Container>
-  )}
-  else{
+    )
+  }
+  else {
     return (
       <Container>
         <div class="container-xl px-4 mt-4">
@@ -163,7 +171,7 @@ export default function Editprofile(props) {
                 <div class="card-header">Change Passowrd</div>
                 <div class="card-body">
                   <form>
-  
+
                     <div class="row gx-3 mb-3">
                       <div class="col-md-6">
                         <label class="small mb-1" for="inputFirstName">Current Password</label>
@@ -181,8 +189,8 @@ export default function Editprofile(props) {
                       </div>
                     </div>
                     {/* <button class="btn btn-primary my-1" type="button" disabled={data.contact.length == 10 ? false : true} onClick={() => handleSaveChanges(data.name, data.hostel, data.contact)}>Save Changes</button> */}
-                    <button class="btn btn-primary my-2" type="button" disabled={pass.new_pass === pass.conf_new_pass && pass.new_pass!==""?false:true} onClick={() => handlePassChanges(pass.curr_pass,pass.new_pass,pass.conf_new_pass)}>Confirm</button>
-                    <button class="btn btn-primary" type="button" onClick={()=>setPasswordChange(false)}>Cancel</button>
+                    <button class="btn btn-primary my-2" type="button" disabled={pass.new_pass === pass.conf_new_pass && pass.new_pass !== "" ? false : true} onClick={() => handlePassChanges(pass.curr_pass, pass.new_pass, pass.conf_new_pass)}>Confirm</button>
+                    <button class="btn btn-primary" type="button" onClick={() => setPasswordChange(false)}>Cancel</button>
                   </form>
                 </div>
               </div>
@@ -190,5 +198,6 @@ export default function Editprofile(props) {
           </div>
         </div>
       </Container>
-  )}
+    )
+  }
 }
