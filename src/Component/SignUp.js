@@ -2,7 +2,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useState } from 'react';
 
-export default function SignUp() {
+export default function SignUp(props) {
 
 
     const [em, setEm] = useState({ name: "", email: "" ,phone: ""})
@@ -28,6 +28,17 @@ export default function SignUp() {
 
         })
         console.log(response);
+        if(response.status === 401){
+            props.showAlert("danger","Email Id Already Existed.",4000);
+            setEm({ name: em.name, email: "" ,phone: em.phone});
+        }
+        else if(response.status === 200){
+            props.showAlert("success",`Confirmation Email Sent To ${em.email}`,"3000");
+            setEm({ name: "", email: "" ,phone: ""});
+        }
+        else if(response.status === 402){
+            props.showAlert("danger",`Phone Number Already registered`,"5000");
+        }
     }
 
 
