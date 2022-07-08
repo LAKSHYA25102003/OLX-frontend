@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-function ResetPassword() {
+function ResetPassword(props) {
 
     const navigate=useNavigate();
 
@@ -28,7 +28,12 @@ function ResetPassword() {
             body: JSON.stringify(data)
 
         })
-        console.log(response.status);
+        if(response.status === 200){
+            props.showAlert("success","Password Resetting Email Sent To The Email Id.",3000);
+        }
+        else{
+            props.showAlert("danger","Email Id Is Not Registered.",3000);
+        }
     }
     return (
         <div className='container' style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>

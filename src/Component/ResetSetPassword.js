@@ -1,11 +1,12 @@
-import React from 'react'
+import React,{useContext}from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
 import { useState } from 'react';
+import AuthContext from '../Context/authentication/AuthContext';
 
 
-function ResetSetPassword() {
+function ResetSetPassword(props) {
 
-
+    const {showPassAlert,setPassAlert} = useContext(AuthContext);
 
     const params = useParams();
     const token = params.token;
@@ -46,13 +47,21 @@ function ResetSetPassword() {
         })
         
         const status=response.status;
-        console.log("success");
-        console.log(response.status);
-
-        // for 400 link already used
-        setTimeout(() => {
+        console.log(status);
+        if(status === 200) {
+            setPassAlert(true);
             navigate("/login")
-        }, 3000);
+            
+        }
+        else if(status === 404){
+            props.showAlert("danger", "Link Already Used.",5000);
+        }
+        else{
+            props.showAlert("danger", "Error.",5000);
+        }
+
+        // for 404 link already used
+       
     }
 
 

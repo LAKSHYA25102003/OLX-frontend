@@ -40,15 +40,15 @@ export default function NewItem() {
   }
   return (
     <Container style={{ marginLeft:"300px"}}>
-      <div class="container-xl px-4 mt-4">
-        <div class="col-xl-8">
-          <div class="card mb-4">
-            <div class="card-header">New Post</div>
-            <div class="card-body">
+      <div className="container-xl px-4 mt-4">
+        <div className="col-xl-8">
+          <div className="card mb-4">
+            <div className="card-header">New Post</div>
+            <div className="card-body">
               <form>
 
-                <div class="row gx-3 mb-3">
-                  <div class="col-md-6">
+                <div className="row gx-3 mb-3">
+                  <div className="col-md-6">
                     <Form.Group className="mb-3">
                       <Form.Label>Category</Form.Label>
                       <Form.Select name='category' value={itemData.category} onChange={onChangeHandler}>
@@ -62,7 +62,7 @@ export default function NewItem() {
                       </Form.Select>
                     </Form.Group>
                   </div>
-                  <div class="col-md-6">
+                  <div className="col-md-6">
                     <Form.Group className="mb-3" required>
                       <Form.Label>Brand</Form.Label>
                       <Form.Control type="text" name='brand' value={itemData.brand} placeholder="brand" onChange={onChangeHandler} />
@@ -71,15 +71,15 @@ export default function NewItem() {
 
                 </div>
 
-                <div class="row gx-3 mb-3">
-                  <div class="col-md-6">
+                <div className="row gx-3 mb-3">
+                  <div className="col-md-6">
                     <Form.Group className="mb-3" required>
                       <Form.Label>Original Buying Data</Form.Label>
                       <Form.Control type="date" name='buyingdate' value={itemData.buyingdate} placeholder="date" onChange={onChangeHandler} />
                     </Form.Group>
                   </div>
 
-                  <div class="col-md-6">
+                  <div className="col-md-6">
                     <Form.Group className="mb-3" required>
                       <Form.Label>Price</Form.Label>
                       <Form.Control type="text" name='price' value={itemData.price} placeholder="Price" onChange={onChangeHandler} />
@@ -89,7 +89,7 @@ export default function NewItem() {
                 </div>
 
 
-                <div class="row gx-3 mb-3">
+                <div className="row gx-3 mb-3">
 
 
                   <FloatingLabel controlId="floatingTextarea2" label="Description">
@@ -104,7 +104,7 @@ export default function NewItem() {
                 </div>
 
 
-                <div class="row gx-3 mb-3">
+                <div className="row gx-3 mb-3">
                   <Form.Group className="mb-3" required>
                     <Form.Label>Image</Form.Label>
                     <Form.Control type="file" name='image' onChange={imageHandler} placeholder="date" />

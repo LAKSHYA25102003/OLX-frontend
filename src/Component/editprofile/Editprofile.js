@@ -75,41 +75,41 @@ export default function Editprofile(props) {
   if (!passwordChange) {
     return (
       <Container>
-        <div class="container-xl px-4 mt-4">
-          <div class="row">
-            <div class="col-xl-4">
-              <div class="card mb-4 mb-xl-0">
-                <div class="card-header">Profile Picture</div>
-                <div class="card-body text-center">
-                  <img class="img-account-profile rounded-circle mb-2" src="http://bootdey.com/img/Content/avatar/avatar1.png" alt="" />
-                  <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
-                  <button class="btn btn-primary" type="button">Upload new image</button>
+        <div className="container-xl px-4 mt-4">
+          <div className="row">
+            <div className="col-xl-4">
+              <div className="card mb-4 mb-xl-0">
+                <div className="card-header">Profile Picture</div>
+                <div className="card-body text-center">
+                  <img className="img-account-profile rounded-circle mb-2" src="http://bootdey.com/img/Content/avatar/avatar1.png" alt="" />
+                  <div className="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
+                  <button className="btn btn-primary" type="button">Upload new image</button>
                 </div>
               </div>
             </div>
-            <div class="col-xl-8">
-              <div class="card mb-4">
-                <div class="card-header">Account Details</div>
-                <div class="card-body">
+            <div className="col-xl-8">
+              <div className="card mb-4">
+                <div className="card-header">Account Details</div>
+                <div className="card-body">
                   <form>
 
-                    <div class="row gx-3 mb-3">
-                      <div class="col-md-6">
-                        <label class="small mb-1" for="inputFirstName">First name</label>
-                        <input class="form-control" name="name" id="inputFirstName" type="text" placeholder="Enter your first name" value={data.name} onChange={onChangeHandler} />
+                    <div className="row gx-3 mb-3">
+                      <div className="col-md-6">
+                        <label className="small mb-1" for="inputFirstName">First name</label>
+                        <input className="form-control" name="name" id="inputFirstName" type="text" placeholder="Enter your first name" value={data.name} onChange={onChangeHandler} />
                       </div>
-                      <div class="col-md-6">
-                        <label class="small mb-1" for="inputEmailAddress">Email address</label>
-                        <input class="form-control" name="email" id="inputEmailAddress" type="email" placeholder="Enter your email address" value={data.email} disabled />
+                      <div className="col-md-6">
+                        <label className="small mb-1" for="inputEmailAddress">Email address</label>
+                        <input className="form-control" name="email" id="inputEmailAddress" type="email" placeholder="Enter your email address" value={data.email} disabled />
                       </div>
 
                     </div>
-                    <div class="row gx-3 mb-3">
-                      <div class="col-md-6">
-                        <label class="small mb-1" for="inputPhone">Phone number</label>
-                        <input class="form-control" name="contact" id="inputPhone" type="tel" placeholder="Enter your phone number" value={`${data.contact}`} onChange={onChangeHandler} />
+                    <div className="row gx-3 mb-3">
+                      <div className="col-md-6">
+                        <label className="small mb-1" for="inputPhone">Phone number</label>
+                        <input className="form-control" name="contact" id="inputPhone" type="tel" placeholder="Enter your phone number" value={`${data.contact}`} onChange={onChangeHandler} />
                       </div>
-                      <div class="col-md-6">
+                      <div className="col-md-6">
                         <Form.Group className="mb-3">
                           <Form.Label>Hostel</Form.Label>
                           <Form.Select name='hostel' value={data.hostel} onChange={onChangeHandler}>
@@ -132,16 +132,16 @@ export default function Editprofile(props) {
                       </div>
 
                     </div>
-                    <div class="row gx-3 mb-3">
-                      <div class="col-md-6">
-                        <button class="btn btn-primary" type="button" style={{ borderRadius: "25px" }} disabled={data.contact.length == 10 ? false : true} onClick={() => handleSaveChanges(data.name, data.hostel, data.contact)}>Save Changes</button>
+                    <div className="row gx-3 mb-3">
+                      <div className="col-md-6">
+                        <button className="btn btn-primary" type="button" style={{ borderRadius: "25px" }} disabled={data.contact.length == 10 ? false : true} onClick={() => handleSaveChanges(data.name, data.hostel, data.contact)}>Save Changes</button>
                       </div>
-                      <div class="col-md-6">
-                        <button class="btn btn-primary" type="button" style={{ borderRadius: "25px" }}> <Link to="/allitemsposted" style={{color: "white"}}>Cancel</Link></button>
+                      <div className="col-md-6">
+                        <button className="btn btn-primary" type="button" style={{ borderRadius: "25px" }}> <Link to="/allitemsposted" style={{color: "white"}}>Cancel</Link></button>
                       </div>
                     </div>
                     
-                      <button class="btn btn-primary my-3" type="button" style={{ borderRadius: "25px",width:"75%",margin:"auto"}} onClick={() => setPasswordChange(true)}>Change Password</button>
+                      <button className="btn btn-primary my-3" type="button" style={{ borderRadius: "25px",width:"75%",margin:"auto"}} onClick={() => setPasswordChange(true)}>Change Password</button>
                   </form>
                 </div>
               </div>
@@ -154,43 +154,43 @@ export default function Editprofile(props) {
   else {
     return (
       <Container>
-        <div class="container-xl px-4 mt-4">
-          <div class="row">
-            <div class="col-xl-4">
-              <div class="card mb-4 mb-xl-0">
-                <div class="card-header">Profile Picture</div>
-                <div class="card-body text-center">
-                  <img class="img-account-profile rounded-circle mb-2" src="http://bootdey.com/img/Content/avatar/avatar1.png" alt="" />
-                  <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
-                  <button class="btn btn-primary" type="button">Upload new image</button>
+        <div className="container-xl px-4 mt-4">
+          <div className="row">
+            <div className="col-xl-4">
+              <div className="card mb-4 mb-xl-0">
+                <div className="card-header">Profile Picture</div>
+                <div className="card-body text-center">
+                  <img className="img-account-profile rounded-circle mb-2" src="http://bootdey.com/img/Content/avatar/avatar1.png" alt="" />
+                  <div className="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
+                  <button className="btn btn-primary" type="button">Upload new image</button>
                 </div>
               </div>
             </div>
-            <div class="col-xl-8">
-              <div class="card mb-4">
-                <div class="card-header">Change Passowrd</div>
-                <div class="card-body">
+            <div className="col-xl-8">
+              <div className="card mb-4">
+                <div className="card-header">Change Passowrd</div>
+                <div className="card-body">
                   <form>
 
-                    <div class="row gx-3 mb-3">
-                      <div class="col-md-6">
-                        <label class="small mb-1" for="inputFirstName">Current Password</label>
-                        <input class="form-control" name="curr_pass" id="inputFirstName" type="text" placeholder="Enter your current password" value={pass.curr_pass} onChange={onChangePassHandler} />
+                    <div className="row gx-3 mb-3">
+                      <div className="col-md-6">
+                        <label className="small mb-1" for="inputFirstName">Current Password</label>
+                        <input className="form-control" name="curr_pass" id="inputFirstName" type="text" placeholder="Enter your current password" value={pass.curr_pass} onChange={onChangePassHandler} />
                       </div>
                     </div>
-                    <div class="row gx-3 mb-3">
-                      <div class="col-md-6">
-                        <label class="small mb-1" for="inputFirstName">New Password</label>
-                        <input class="form-control" name="new_pass" id="inputFirstName" type="password" placeholder="Enter your new password." value={pass.new_pass} onChange={onChangePassHandler} />
+                    <div className="row gx-3 mb-3">
+                      <div className="col-md-6">
+                        <label className="small mb-1" for="inputFirstName">New Password</label>
+                        <input className="form-control" name="new_pass" id="inputFirstName" type="password" placeholder="Enter your new password." value={pass.new_pass} onChange={onChangePassHandler} />
                       </div>
-                      <div class="col-md-6">
-                        <label class="small mb-1" for="inputFirstName">Confirm Password</label>
-                        <input class="form-control" name="conf_new_pass" id="inputFirstName" type="text" placeholder="Enter password again." value={pass.conf_new_pass} onChange={onChangePassHandler} />
+                      <div className="col-md-6">
+                        <label className="small mb-1" for="inputFirstName">Confirm Password</label>
+                        <input className="form-control" name="conf_new_pass" id="inputFirstName" type="text" placeholder="Enter password again." value={pass.conf_new_pass} onChange={onChangePassHandler} />
                       </div>
                     </div>
-                    {/* <button class="btn btn-primary my-1" type="button" disabled={data.contact.length == 10 ? false : true} onClick={() => handleSaveChanges(data.name, data.hostel, data.contact)}>Save Changes</button> */}
-                    <button class="btn btn-primary my-2" type="button" disabled={pass.new_pass === pass.conf_new_pass && pass.new_pass !== "" ? false : true} onClick={() => handlePassChanges(pass.curr_pass, pass.new_pass, pass.conf_new_pass)}>Confirm</button>
-                    <button class="btn btn-primary" type="button" onClick={() => setPasswordChange(false)}>Cancel</button>
+                    {/* <button className="btn btn-primary my-1" type="button" disabled={data.contact.length == 10 ? false : true} onClick={() => handleSaveChanges(data.name, data.hostel, data.contact)}>Save Changes</button> */}
+                    <button className="btn btn-primary my-2" type="button" disabled={pass.new_pass === pass.conf_new_pass && pass.new_pass !== "" ? false : true} onClick={() => handlePassChanges(pass.curr_pass, pass.new_pass, pass.conf_new_pass)}>Confirm</button>
+                    <button className="btn btn-primary" type="button" onClick={() => setPasswordChange(false)}>Cancel</button>
                   </form>
                 </div>
               </div>

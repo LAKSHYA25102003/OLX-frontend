@@ -20,6 +20,9 @@ export function LoginModal() {
     navigate("/login");
   }
 
+  const handleAdminLogin = ()=>{
+    navigate("/admin/login")
+  }
 
 
   return (
@@ -59,7 +62,11 @@ export function LoginModal() {
             </div>
             <div className='modal-button' onClick={handleEmailLogin}>
               <i className="fa fa-envelope" aria-hidden="true"></i>
-              <h6>Login with Email</h6>
+              <h6>User Login</h6>
+            </div>
+            <div className='modal-button' onClick={handleAdminLogin}>
+              <i className="fa fa-envelope" aria-hidden="true"></i>
+              <h6>Admin Login</h6>
             </div>
           </div>
         </form>
