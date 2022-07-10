@@ -133,6 +133,7 @@ function Login(props) {
         setPassAlert(false);
     }
 
+    console.log("isadmin = ",props.isadmin)
     if (props.isadmin === false) {
         return (
             <div className='container' style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
