@@ -175,7 +175,7 @@ export default function Editprofile(props) {
                     <div className="row gx-3 mb-3">
                       <div className="col-md-6">
                         <label className="small mb-1" for="inputFirstName">Current Password</label>
-                        <input className="form-control" name="curr_pass" id="inputFirstName" type="text" placeholder="Enter your current password" value={pass.curr_pass} onChange={onChangePassHandler} />
+                        <input className="form-control" name="curr_pass" id="inputFirstName" type="password" placeholder="Enter your current password" value={pass.curr_pass} onChange={onChangePassHandler} />
                       </div>
                     </div>
                     <div className="row gx-3 mb-3">
@@ -189,8 +189,8 @@ export default function Editprofile(props) {
                       </div>
                     </div>
                     {/* <button className="btn btn-primary my-1" type="button" disabled={data.contact.length == 10 ? false : true} onClick={() => handleSaveChanges(data.name, data.hostel, data.contact)}>Save Changes</button> */}
-                    <button className="btn btn-primary my-2" type="button" disabled={pass.new_pass === pass.conf_new_pass && pass.new_pass !== "" ? false : true} onClick={() => handlePassChanges(pass.curr_pass, pass.new_pass, pass.conf_new_pass)}>Confirm</button>
-                    <button className="btn btn-primary" type="button" onClick={() => setPasswordChange(false)}>Cancel</button>
+                    <button className="btn btn-primary my-2" style={{borderRadius: "25px"}} type="button" disabled={pass.new_pass === pass.conf_new_pass && pass.new_pass !== "" ? false : true} onClick={() => handlePassChanges(pass.curr_pass, pass.new_pass, pass.conf_new_pass)}>Confirm</button>
+                    <button className="btn btn-primary" style={{borderRadius: "25px"}} type="button" onClick={() => setPasswordChange(false)}>Cancel</button>
                   </form>
                 </div>
               </div>

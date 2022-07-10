@@ -65,10 +65,10 @@ function Item(props) {
       <p>{item.description.slice(0,100)}...</p>
       <div className="row gx-3 mb-3">
       {localStorage.getItem('admin-token') === null?<div className="col-md-6 my-2"><button style={{borderRadius: "25px",width:"75%"}}><Link to={`/description/${item._id}`} style={{color: "white"}}>Description</Link></button></div>:<div className="my-2"><button style={{ borderRadius: "25px", width: "75%" }}><Link to={`/admin/item/desc/${item._id}`} style={{ color: "white" }}>Description</Link></button></div>}
-          {localStorage.getItem('admin-token') === null && <div classclassName="col-md-6">
+          {localStorage.getItem('admin-token') === null && <div className="col-md-6 my-2">
             {!del ? <button className="my-2" style={{borderRadius: "25px",width:"75%"}} onClick={onClickLikeHandler} variant="primary">
             {isLiked==true?"Dislike":"Like"}
-          </button>:<button className="my-2" style={{borderRadius: "25px",width:"75%"}} onClick={onClickHandler} variant="primary">
+          </button>:<button className="col-md-6 my-2" style={{borderRadius: "25px",width:"75%"}} onClick={onClickHandler} variant="primary">
             Delete
           </button>}      
           </div>}
