@@ -26,6 +26,7 @@ import DescFetch from "./Component/DescFetch";
 import UpdateItem from "./Component/UpdateItem";
 import Likedby from "./Component/Likedby";
 import UserProf from "./Component/UserProf";
+import Messanger from "./Pages/Messanger";
 
 function App() {
 
@@ -50,7 +51,7 @@ function App() {
               <Route path="/" element={<Home showAlert={showAlert}/>}></Route>
               <Route path="/newitem" element={<NewItem showAlert={showAlert}/>}></Route>
               <Route path="/login" element={<Login showAlert={showAlert}/>}></Route>
-              <Route path="/description/:id" forcedRefresh={true} element={<DescFetch showAlert={showAlert}/>}></Route>
+              <Route path="/description/:id" forcedRefresh={true} element={<Description showAlert={showAlert}/>}></Route>
               <Route path="/sign-up" element={<SignUp showAlert={showAlert}/>}></Route>
               <Route path="/set-password/:token" element={<SetPassword showAlert={showAlert}/>}></Route>
               <Route path="/edit-profile" element={<Profile showAlert={showAlert}/>}></Route>
@@ -62,6 +63,7 @@ function App() {
               <Route path="/update-item/:id" element={<UpdateItem showAlert={showAlert}/>}></Route>
               <Route path="/likedby/:id" element={<Likedby showAlert={showAlert}/>}></Route>
               <Route path="/userprof/:id" element={<UserProf showAlert={showAlert}/>}></Route>
+              <Route path="/messanger/" element={<Messanger/>}></Route>
             </Routes>
           </div>
         </Router>
