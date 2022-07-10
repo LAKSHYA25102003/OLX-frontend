@@ -39,8 +39,12 @@ function Item(props) {
   }, []);
   
   // console.log(imageUrl)
-  const onClickLikeHandler=()=>{
-    likeItem(item._id)
+  const onClickLikeHandler= async()=>{
+    const x = await likeItem(item._id);
+
+    if(x == 403){
+      props.showAlert("danger","Cannot Like You Own Items.",3000)
+    }
     if(isLiked==true){
       setLiked(false);
     }
@@ -50,32 +54,34 @@ function Item(props) {
   }
   const onClickHandler=()=>{
     deleteItem(item._id)
+    // props.deleteTheItem(item._id);
   }
+  
   return (
-    <div class="card my-4" style={{borderRadius: "25px",borderColor: "black",borderWidth: "2px"}}>
+    <div className="card my-4" style={{borderRadius: "25px",borderColor: "black",borderWidth: "2px"}}>
       <img src={imageUrl} alt="Denim Jeans" style={{width:"100%",paddingTop:"5px",borderRadius: "25px"}} />
       
-      <h2 class="price my-2">Rs. {item.price}</h2>
+      <h2 className="price my-2">Rs. {item.price}</h2>
       <p>{item.description.slice(0,100)}...</p>
-      <div class="row gx-3 mb-3">
-      <div class="col-md-6 my-2"><button style={{borderRadius: "25px",width:"75%"}}><Link to={`/description/${item._id}`} style={{color: "white"}}>Description</Link></button></div>
-          <div class="col-md-6">
+      <div className="row gx-3 mb-3">
+      {localStorage.getItem('admin-token') === null?<div className="col-md-6 my-2"><button style={{borderRadius: "25px",width:"75%"}}><Link to={`/description/${item._id}`} style={{color: "white"}}>Description</Link></button></div>:<div className="my-2"><button style={{ borderRadius: "25px", width: "75%" }}><Link to={`/admin/item/desc/${item._id}`} style={{ color: "white" }}>Description</Link></button></div>}
+          {localStorage.getItem('admin-token') === null && <div classclassName="col-md-6">
             {!del ? <button className="my-2" style={{borderRadius: "25px",width:"75%"}} onClick={onClickLikeHandler} variant="primary">
             {isLiked==true?"Dislike":"Like"}
           </button>:<button className="my-2" style={{borderRadius: "25px",width:"75%"}} onClick={onClickHandler} variant="primary">
             Delete
           </button>}      
-          </div>
+          </div>}
       </div>
-      <div class="row gx-3 mb-3">
-          <div class="col-md-6">
+      <div className="row gx-3 mb-3">
+          <div className="col-md-6">
             {props.isuser ? <button className="my-2" style={{borderRadius: "25px",width:"75%"}}  variant="primary">
             <Link to={`/update-item/${item._id}`} style={{color:"white"}}>Update</Link>
           </button>:<></>}
           </div>
 
           
-            {props.isuser ? <div class="col-md-6 my-2"><button style={{borderRadius: "25px",width:"75%"}}><Link to={`/likedby/${item._id}`} style={{color: "white"}}>Liked By</Link></button></div>:<></>}
+            {props.isuser ? <div className="col-md-6 my-2"><button style={{borderRadius: "25px",width:"75%"}}><Link to={`/likedby/${item._id}`} style={{color: "white"}}>Liked By</Link></button></div>:<></>}
           
       </div>
     </div>

@@ -27,6 +27,12 @@ import UpdateItem from "./Component/UpdateItem";
 import Likedby from "./Component/Likedby";
 import UserProf from "./Component/UserProf";
 import Messanger from "./Pages/Messanger";
+import AdminLogin from "./Component/AdminLogin";
+import AllUsers from "./Component/AllUsers";
+import AdminUserProf from "./Component/AdminUserProf";
+import AllItems from "./Component/AllItems";
+import AdminItemDesc from "./Component/AdminItemDesc";
+
 
 function App() {
 
@@ -50,8 +56,13 @@ function App() {
             <Routes>
               <Route path="/" element={<Home showAlert={showAlert}/>}></Route>
               <Route path="/newitem" element={<NewItem showAlert={showAlert}/>}></Route>
+
               <Route path="/login" element={<Login showAlert={showAlert}/>}></Route>
               <Route path="/description/:id" forcedRefresh={true} element={<Description showAlert={showAlert}/>}></Route>
+              <Route path="/login" element={<Login showAlert={showAlert} isadmin={false}/>}></Route>
+              <Route path="/admin/login" element={<Login showAlert={showAlert} isadmin={true}/>}></Route>
+              <Route path="/description/:id" forcedRefresh={true} element={<DescFetch showAlert={showAlert}/>}></Route>
+
               <Route path="/sign-up" element={<SignUp showAlert={showAlert}/>}></Route>
               <Route path="/set-password/:token" element={<SetPassword showAlert={showAlert}/>}></Route>
               <Route path="/edit-profile" element={<Profile showAlert={showAlert}/>}></Route>
@@ -64,6 +75,11 @@ function App() {
               <Route path="/likedby/:id" element={<Likedby showAlert={showAlert}/>}></Route>
               <Route path="/userprof/:id" element={<UserProf showAlert={showAlert}/>}></Route>
               <Route path="/messanger/" element={<Messanger/>}></Route>
+              <Route path="/admin-userprof/:id" element={<AdminUserProf showAlert={showAlert}/>}></Route>
+              <Route path="/admin/allusers" element={<AllUsers showAlert={showAlert}/>}></Route>
+              <Route path="/admin/allitems" element={<AllItems showAlert={showAlert}/>}></Route>
+              <Route path="/admin/item/desc/:id" element={<AdminItemDesc showAlert={showAlert}/>}></Route>
+
             </Routes>
           </div>
         </Router>

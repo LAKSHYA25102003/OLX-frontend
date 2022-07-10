@@ -25,9 +25,9 @@ function ItemCollection(props) {
     <div className='container'>
       <div className='row my-4'>
           {
-            items.map((item)=>{
+            items.map((item,i)=>{
               return (
-              <Item item={item} del={false} key={item.id}/>
+              <Item item={item} del={false} key={i} showAlert={props.showAlert}/>
               );
             })
           }

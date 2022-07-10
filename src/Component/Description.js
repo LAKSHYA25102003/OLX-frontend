@@ -11,11 +11,11 @@ export default function Description(props) {
     <>
     <Container>
     <Card style={{alignItems:"center"}} className="my-3">
-  <Card.Img variant="top" style={{width:"auto",height:"800px","border-radius": "25px"}} src={`http://localhost:5000/${itembyID[0].img_address}`} />
+  <Card.Img variant="top" style={{width:"175%",height:"auto","border-radius": "25px"}} src={`http://localhost:5000/${itembyID[0].img_address}`} />
 
     </Card>
     <div className='row my-4'>
-    <Card >
+    <Card style={{width:"75%",height:"auto","border-radius": "25px"}}>
       <Card.Header as="h3">{itembyID[0].category}</Card.Header>
       
       <Card.Body>
@@ -32,7 +32,7 @@ export default function Description(props) {
         <Button variant="primary">Rs {itembyID[0].price}</Button>
       </Card.Body>      
     </Card>
-    <Card >
+    <Card style={{width:"75%",height:"auto","border-radius": "25px"}}>
       <Card.Header as="h5">Seller Details</Card.Header>
       
       <Card.Body>

@@ -18,6 +18,7 @@ const ItemState=(props)=>{
         })
         console.log(response.status);
         const json=await response.json()
+        json.reverse();
         setUserLikedItems(json)
     }
     const likeItem=async(id)=>{
@@ -29,6 +30,7 @@ const ItemState=(props)=>{
                 'auth-token':localStorage.getItem('token')
             }
         })
+        return response.status;
     }
     const deleteItem=async(id)=>{
         const url=`http://localhost:5000/api/item/delItem/${id}`
@@ -39,6 +41,7 @@ const ItemState=(props)=>{
                 'auth-token':localStorage.getItem('token')
             }
         })
+        return response.status;
     }
     const fetchUserItems=async()=>{
         const url=`http://localhost:5000/api/item/user-items`
@@ -52,6 +55,7 @@ const ItemState=(props)=>{
         console.log(response.status);
         const json=await response.json()
         setUserItems(json)
+        json.reverse();
         console.log("useritem:- ",json)
     }
     const fetchItembyID=async (id)=>{
@@ -78,6 +82,7 @@ const ItemState=(props)=>{
             }
         })
         const json=await response.json()
+        json.reverse();
         setItembyCategory(json)
     }
     const fetchItem=async ()=>{
@@ -91,6 +96,7 @@ const ItemState=(props)=>{
         })
         console.log(response.status);
         const json=await response.json()
+        json.reverse();
         setItems(json)
     }
     return (

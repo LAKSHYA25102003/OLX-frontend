@@ -15,7 +15,12 @@ function Navbar() {
     const { setModalState } = context;
 
     const handleLogout = () => {
-        localStorage.removeItem('token');
+        if(localStorage.getItem('token')!==null){
+            localStorage.removeItem('token');
+        }else{
+            localStorage.removeItem('admin-token');
+        }
+        
         Navigate("/login");
     }
 
@@ -116,30 +121,32 @@ function Navbar() {
                         </ul>
 
                     </div>
-                    <div className='d-flex justify-content-center align-items-center ms-3 mx-2'>
+                    <div className='d-flex justify-content-center align-items-center ms-3 mx-3'>
                         <h5>English</h5>
                     </div>
 
-                    {localStorage.getItem('token') === null && <div className='d-flex justify-content-center align-items-center ms-3'>
+                    {(localStorage.getItem('token') == null && localStorage.getItem('admin-token') == null) && <div className='d-flex justify-content-center align-items-center ms-3'>
                         <button className='btn mx-4' style={{ textDecoration: "underline", outline: "none", border: "none" }} onClick={loginHandler}><h5>Login</h5></button>
                     </div>}
-                    {localStorage.getItem('token') !== null && <><DropdownButton id="dropdown-basic-button" title="Profile" ref={dropDownRef}>
-                        <Link class="dropdown-item" to="/edit-profile" >Profile</Link>
-                        <Link class="dropdown-item" to="/allitemsposted" >All Items Posted</Link>
-                        <Link class="dropdown-item" to="/likeditem" >Activity</Link>
-                    </DropdownButton></>
-                    }
-                    <div className='d-flex justify-content-center align-items-center ms-3'>
+                    {localStorage.getItem('token') !== null && <div className='d-flex justify-content-center align-items-center ms-3 mx-4'>
                         <button className='btn btn-outline-primary ' style={{ borderRadius: '30px', boxShadow: "2px 2px 2px blue" }} >
                             <div style={{ fontSize: "20px" }} className='d-flex justify-content-center align-items-center'>
                                 <i className="fa fa-plus me-1" aria-hidden="true"></i>
                                 <Link to='/newitem'>Sell</Link>
                             </div>
                         </button>
-                    </div>
-                    {localStorage.getItem('token') !==null && <div className='d-flex justify-content-center align-items-center ms-3'>
-                    <button className='btn' style={{ textDecoration: "underline", outline: "none", border: "none" }} onClick={handleLogout}><h5>LogOut</h5></button>
-                </div>}
+                    </div>}
+
+                    {(localStorage.getItem('token') !== null || localStorage.getItem('admin-token') !== null)  && <><DropdownButton id="dropdown-basic-button" title="Profile" ref={dropDownRef} style={{ borderRadius: '30px', boxShadow: "2px"}}>
+                        {(localStorage.getItem('token') !== null || localStorage.getItem('admin-token') !== null) && <Link className="dropdown-item my-1" style={{ textDecoration: "underline", outline: "none", border: "none" }} to="/edit-profile" ><h5>Profile</h5></Link>}
+                        {localStorage.getItem('token') !== null && <Link className="dropdown-item my-1" style={{ textDecoration: "underline", outline: "none", border: "none" }} to="/allitemsposted" ><h5>All Items Posted</h5></Link>}
+                        {localStorage.getItem('token') !== null &&<Link className="dropdown-item my-1"style={{ textDecoration: "underline", outline: "none", border: "none" }} to="/likeditem" ><h5>Activity</h5></Link>}
+                        {localStorage.getItem('admin-token') !== null &&<Link className="dropdown-item my-1"style={{ textDecoration: "underline", outline: "none", border: "none" }} to="/admin/allusers" ><h5>All Users</h5></Link>}
+                        {localStorage.getItem('admin-token') !== null &&<Link className="dropdown-item my-1"style={{ textDecoration: "underline", outline: "none", border: "none" }} to="/admin/allitems" ><h5>All Items</h5></Link>}
+                        {(localStorage.getItem('token') !== null || localStorage.getItem('admin-token') !== null) &&<button className='dropdown-item btn my-1' style={{ textDecoration: "underline", outline: "none", border: "none" }} onClick={handleLogout}><h5>LogOut</h5></button>}
+                    </DropdownButton></>
+                    }
+                    
                 </div>
             </nav>
         </>

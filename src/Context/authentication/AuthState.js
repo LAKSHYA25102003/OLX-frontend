@@ -10,9 +10,10 @@ const AuthState=(props)=>{
         setmodalState(NewmodalState);
     }
     const [showLoginAlert,setLoginAlert] = useState(false)
+    const [showPassAlert,setPassAlert] = useState(false)
     
     return (
-    <AuthContext.Provider value={{modalState,setModalState,user,showLoginAlert,setLoginAlert}}>
+    <AuthContext.Provider value={{modalState,setModalState,user,showLoginAlert,setLoginAlert,showPassAlert,setPassAlert}}>
         {props.children}
     </AuthContext.Provider>
     );
