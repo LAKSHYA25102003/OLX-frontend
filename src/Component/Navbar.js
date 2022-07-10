@@ -117,24 +117,6 @@ function Navbar() {
                                         </div>
                                     </div>
                                 }
-
-                                {/* <div className='d-flex justify-content-center align-items-center ms-3'>
-                                <h5>English</h5>
-                            </div>
-
-                            <div className='d-flex justify-content-center align-items-center ms-3'>
-                                <button className='btn' style={{ textDecoration: "underline", outline: "none", border: "none" }}><h5>Login</h5></button>
-                            </div>
-
-                            <div className='d-flex justify-content-center align-items-center ms-3'>
-                                <button className='btn btn-primary' style={{borderRadius:'3px'}} >
-                                    <div style={{fontSize:"20px"}} className='d-flex justify-content-center align-items-center'>
-                                        <i className="fa fa-plus me-1" aria-hidden="true"></i>
-                                        Sell
-                                    </div>
-                                </button>
-                            </div> */}
-
                             </form>
                         </ul>
 
