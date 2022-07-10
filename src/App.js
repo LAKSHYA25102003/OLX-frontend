@@ -56,13 +56,9 @@ function App() {
             <Routes>
               <Route path="/" element={<Home showAlert={showAlert}/>}></Route>
               <Route path="/newitem" element={<NewItem showAlert={showAlert}/>}></Route>
-
-              <Route path="/login" element={<Login showAlert={showAlert}/>}></Route>
-              <Route path="/description/:id" forcedRefresh={true} element={<Description showAlert={showAlert}/>}></Route>
               <Route path="/login" element={<Login showAlert={showAlert} isadmin={false}/>}></Route>
               <Route path="/admin/login" element={<Login showAlert={showAlert} isadmin={true}/>}></Route>
               <Route path="/description/:id" forcedRefresh={true} element={<DescFetch showAlert={showAlert}/>}></Route>
-
               <Route path="/sign-up" element={<SignUp showAlert={showAlert}/>}></Route>
               <Route path="/set-password/:token" element={<SetPassword showAlert={showAlert}/>}></Route>
               <Route path="/edit-profile" element={<Profile showAlert={showAlert}/>}></Route>
