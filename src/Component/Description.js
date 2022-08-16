@@ -40,8 +40,6 @@ export default function Description(props) {
       navigate("/messanger/"+response.conversation._id);
     }
   }
-  // console.log(itembyID);
-  // console.log(item.ownerDetails)
   return (loggedInuser.length!==0)&&(
     <>
       <Container>
