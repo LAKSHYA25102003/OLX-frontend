@@ -30,9 +30,10 @@ export default function Description(props) {
       headers: {
         'Content-Type': "application/json",
       },
+
       body:JSON.stringify(data)
     })
-    response=await response.json();
+    response=await response.json()
     if(response.success==true)
     {
       // console.log("res= ",response);
