@@ -14,6 +14,10 @@ function Navbar() {
     const context = useContext(AuthContext);
     const { setModalState } = context;
 
+    const handleMessages=()=>{
+
+    }
+
     const handleLogout = () => {
         if(localStorage.getItem('token')!==null){
             localStorage.removeItem('token');

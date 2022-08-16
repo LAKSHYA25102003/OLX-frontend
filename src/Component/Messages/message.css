@@ -4,16 +4,11 @@
     flex-direction: column;
 }
 
-.messageImg{
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-top: 10px;
-}
+
 
 .messageTop{
     display: flex;
+    padding: 0px;
 }
 
 .messageTopText{
@@ -33,7 +28,16 @@
 
 .message.own{
     align-items: flex-end;
+    padding: 0px;
+    margin-bottom: 10px;
 }
+
+.message{
+    padding: 0px;
+    margin-bottom: 10px;
+}
+
+
 
 .message.own .messageTopText{
     background-color: rgb(80, 116, 80,.8);

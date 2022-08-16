@@ -32,10 +32,9 @@ import AllUsers from "./Component/AllUsers";
 import AdminUserProf from "./Component/AdminUserProf";
 import AllItems from "./Component/AllItems";
 import AdminItemDesc from "./Component/AdminItemDesc";
-
+import ChatUser from "./Component/ChatUser";
 
 function App() {
-
   const [alert, setAlert] = useState(null);
   const showAlert = (type, message, time) =>
     setAlert({
@@ -70,12 +69,12 @@ function App() {
               <Route path="/update-item/:id" element={<UpdateItem showAlert={showAlert}/>}></Route>
               <Route path="/likedby/:id" element={<Likedby showAlert={showAlert}/>}></Route>
               <Route path="/userprof/:id" element={<UserProf showAlert={showAlert}/>}></Route>
-              <Route path="/messanger/" element={<Messanger/>}></Route>
+              <Route path="/messanger/:id" element={<Messanger/>}></Route>
               <Route path="/admin-userprof/:id" element={<AdminUserProf showAlert={showAlert}/>}></Route>
               <Route path="/admin/allusers" element={<AllUsers showAlert={showAlert}/>}></Route>
               <Route path="/admin/allitems" element={<AllItems showAlert={showAlert}/>}></Route>
               <Route path="/admin/item/desc/:id" element={<AdminItemDesc showAlert={showAlert}/>}></Route>
-
+              <Route path="/chatUsers/:id" element={<ChatUser/>}></Route>
             </Routes>
           </div>
         </Router>

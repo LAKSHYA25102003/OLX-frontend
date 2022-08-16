@@ -1,26 +1,19 @@
 import { useNavigate } from "react-router-dom"
 import React, { useState, useContext } from "react";
-import AuthContext from '../Context/authentication/AuthContext';
 import ItemContext from "../Context/item/ItemContext";
+import AuthContext from "../Context/authentication/AuthContext";
 
 function Login(props) {
-
     const [loginCred, setLoginCred] = useState({
         email: "",
         password: ""
     })
-
     const authContext = useContext(AuthContext);
-    const { setLoginAlert, showPassAlert, setPassAlert } = authContext;
-
-
-
+    const {setModalState,setLoginAlert, showPassAlert, setPassAlert } = authContext;
     const onChangeHandler = (event) => {
         setLoginCred({ ...loginCred, [event.target.name]: event.target.value });
     }
-
     const Navigate = useNavigate();
-
     const loginSubmitHandler = async (event) => {
         event.preventDefault();
         const url = "http://localhost:5000/api/auth/login";
@@ -118,6 +111,8 @@ function Login(props) {
                 password: ""
             });
         }
+        setModalState(false);
+
     }
 
 

@@ -6,10 +6,12 @@ import { Link,useNavigate } from "react-router-dom";
 // import DoneIcon from '@mui/icons-material/Done';
 // import DeleteIcon from '@mui/icons-material/Delete';
 import ItemContext from "../Context/item/ItemContext";
+import MessageIcon from '@mui/icons-material/Message';
+
 import './item.css'
 function Item(props) {
   const navigate = useNavigate();
-  const { item,del } = props;
+  const { item,del ,userItem} = props;
   const {deleteItem,likeItem}=useContext(ItemContext)
   const [isLiked,setLiked] = useState(false);
   
@@ -60,8 +62,9 @@ function Item(props) {
   return (
     <div className="card my-4" style={{borderRadius: "25px",borderColor: "black",borderWidth: "2px"}}>
       <img src={imageUrl} alt="Denim Jeans" style={{width:"100%",paddingTop:"5px",borderRadius: "25px"}} />
-      
-      <h2 className="price my-2">Rs. {item.price}</h2>
+      <div >
+        <h2  style={{position:"relative"}} className="price my-2">Rs. {item.price} {userItem&&<MessageIcon onClick={(e)=>{e.preventDefault(); navigate(`/chatUsers/${item._id}`)}} style={{position:"absolute",right:"10px",cursor:"pointer"}}/>}</h2>
+      </div>
       <p>{item.description.slice(0,100)}...</p>
       <div className="row gx-3 mb-3">
       {localStorage.getItem('admin-token') === null?<div className="col-md-6 my-2"><button style={{borderRadius: "25px",width:"75%"}}><Link to={`/description/${item._id}`} style={{color: "white"}}>Description</Link></button></div>:<div className="my-2"><button style={{ borderRadius: "25px", width: "75%" }}><Link to={`/admin/item/desc/${item._id}`} style={{ color: "white" }}>Description</Link></button></div>}

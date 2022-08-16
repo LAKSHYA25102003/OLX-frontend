@@ -19,17 +19,15 @@ const Likedby = () => {
                 'auth-token': localStorage.getItem('token') // yokrn
             }
         })
-            const json = await response.json()
-            setUsers(json)
+            const json = await response.json();
+            setUsers(json);
     }
 
     useEffect(() => {
         if(localStorage.getItem('token')){
             fetchUsers();
         }
-
     }, [users.length]);
-
 
     if(localStorage.getItem('token')){
         if (users.length === 0) {

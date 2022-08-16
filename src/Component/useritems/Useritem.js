@@ -4,6 +4,7 @@ import ItemContext from '../../Context/item/ItemContext';
 import Item from '../Item';
 import { Button,Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 export default function Useritem() {
     const context=useContext(ItemContext);
     const {userItems,fetchUserItems}=context;
@@ -13,8 +14,8 @@ export default function Useritem() {
     }
     useEffect(()=>{
     getItem()
-    
     },[userItems.length])
+
     
     if(userItems.length!==0){
         return (
@@ -23,7 +24,7 @@ export default function Useritem() {
                 {
                   userItems.map((item)=>{
                     return (
-                    <Item item={item} del={true} key={item.id} isuser={true}/>
+                    <Item item={item} del={true} key={item.id} isuser={true} userItem={true} />
                     );
                   })
                 }
